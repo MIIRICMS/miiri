@@ -381,15 +381,14 @@
                                                                                                                                             data-transform_idle="o:1;"
                                                                                                                                             data-transform_in="x:inherit;y:inherit;z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;s:600;e:easeOutExpo;"
                                                                                                                                             style="z-index:4">
-                                                                                                                                            Welcome to</h2>
+                                                                                                                                            {{$contents->title1}}</h2>
                                                                                                                                         <h5 class="tp-caption text slide-style-2 "
                                                                                                                                             style="font-size: 40px;" data-x="center"
                                                                                                                                             data-y="415" data-start="1500.00"
                                                                                                                                             data-transform_idle="o:1;"
                                                                                                                                             data-transform_in="x:inherit;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:600;e:easeOutExpo;"
                                                                                                                                             style="z-index:3">
-                                                                                                                                            <b></b> MUST Institute of Industrial Research and
-                                                                                                                                            Innovation
+                                                                                                                                            <b></b>    {!! $contents->description1  !!}
                                                                                                                                         </h5>
 
 
@@ -426,6 +425,9 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                        <div>
+
+                                                                        </div>
                                                                         <div class="gbb-row-wrapper">
                                                                             <div class=" gbb-row bg-size-cover" style="padding-top:30px; padding-bottom:30px">
                                                                                 <div class="bb-inner default">
@@ -440,19 +442,11 @@
                                                                                                                 <div class="content-inner clearfix">
                                                                                                                     <div class="content">
 
-                                                                                                                        <h2 class="title"><span>About MIIRI</span></h2>
+                                                                                                                        <h2 class="title"><span>{{$contents->title2}}</span></h2>
                                                                                                                         <div class="desc">
                                                                                                                             <p>
                                                                                                                             </p>
-                                                                                                                            <p> <strong>MIIRI </strong>is moulded on the understanding
-                                                                                                                                that advancing development for the individual, the
-                                                                                                                                community and the nation requires the systematic
-                                                                                                                                investment in innovation and innovativeness from the
-                                                                                                                                vast resources bank within MUST and beyond MUST’s
-                                                                                                                                borders. As such, MIIRI takes a keen interest in
-                                                                                                                                seeking, developing and advancing innovative ideas
-                                                                                                                                through relevant industrial research
-                                                                                                                                .</p>
+                                                                                                                            <p>{!! $contents->description2  !!}
                                                                                                                         </div>
                                                                                                                     </div>
                                                                                                                     <div class="button-action">

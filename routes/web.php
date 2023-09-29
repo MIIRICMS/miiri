@@ -11,12 +11,14 @@
 |
 */
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {return view('pages.guest.home');})->name('home');
+Route::get('/', [PageController::class,'home'])->name('home');
 Route::get('/login', function () { return view('pages.guest.login'); })->name('login');
 Route::get('/dashboard', function () { return view('pages.admin.dashboard'); })->name('dashboard');
-Route::get('/pages/home', function () { return view('pages.admin.home'); })->name('home.edit');
+Route::post('/pages', [PageController::class,'updateContent'])->name('pages.update');
+Route::get('/pages/home', [PageController::class,'homeEdit'])->name('home.edit');
 
 Route::group(['prefix' => 'email'], function(){
     Route::get('inbox', function () { return view('pages.email.inbox'); });

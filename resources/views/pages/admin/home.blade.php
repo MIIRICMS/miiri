@@ -20,22 +20,30 @@
 
         <h6 class="card-title">Page Content</h6>
 
-        <form class="forms-sample">
+        <form class="forms-sample" method="post" action="{{route('pages.update')}}">
+            @csrf
+
+            <input type="hidden" name="page" value="HOME">
+
           <div class="mb-3">
             <label for="title1" class="form-label">Title #1</label>
-            <input type="text" class="form-control" name="title1" id="title1" autocomplete="off" placeholder="Username">
+            <input value="{{$contents->title1}}" type="text" class="form-control" name="title1" id="title1" autocomplete="off" placeholder="Username">
           </div>
           <div class="mb-3">
               <label for="tinymceExample" class="form-label">Description #1</label>
-              <textarea class="form-control editor" name="description1" id="tinymceExample" rows="10"></textarea>
+              <textarea class="form-control editor" name="description1" id="tinymceExample" rows="10">
+                  {{$contents->description1}}
+              </textarea>
           </div>
           <div class="mb-3">
             <label for="title2" class="form-label">Title #2</label>
-            <input type="text" class="form-control" name="title2" id="title2" autocomplete="off" placeholder="Username">
+            <input value="{{$contents->title2}}" type="text" class="form-control" name="title2" id="title2" autocomplete="off" placeholder="Username">
           </div>
           <div class="mb-3">
               <label for="tinymceExample" class="form-label">Description #2</label>
-              <textarea class="form-control editor" name="description2" id="tinymceExample" rows="10"></textarea>
+              <textarea class="form-control editor" name="description2" id="tinymceExample" rows="10">
+                  {{$contents->description2}}
+              </textarea>
           </div>
 
           <button type="submit" class="btn btn-primary me-2">Update</button>
