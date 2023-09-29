@@ -1,4 +1,8 @@
-@extends('layout.master')
+@extends('layout.auth')
+
+@section('title')
+    <title>MIIRI| Manage Home Page</title>
+@endsection
 
 @push('plugin-styles')
     <link href="{{ asset('assets/plugins/easymde/easymde.min.css') }}" rel="stylesheet" />
