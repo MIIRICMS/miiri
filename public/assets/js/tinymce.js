@@ -7,7 +7,7 @@ $(function() {
   //Tinymce editor
   if ($("#tinymceExample").length) {
     tinymce.init({
-      selector: '#tinymceExample',
+      selector: '.editor',
       height: 350,
       default_text_color: 'red',
       plugins: 'advlist autolink lists link image charmap preview anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen',
@@ -26,5 +26,5 @@ $(function() {
       content_css: []
     });
   }
-  
+
 });

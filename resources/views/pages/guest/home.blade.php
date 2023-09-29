@@ -1,5 +1,9 @@
 @extends('layout.master3')
 
+@section('title')
+    <title>MIIRI| Home Page</title>
+@endsection
+
 @push('plugin-styles')
   <link href="{{ asset('assets/plugins/fullcalendar/main.min.css') }}" rel="stylesheet" />
   <style class="customize"></style>
@@ -211,6 +215,10 @@
                                                                                 </a>
 
                                                                             </li>
+{{--                                                                            <li class="menu-item ">--}}
+{{--                                                                                <a href="{{ route('login')}}">Login</a>--}}
+{{--                                                                            </li>--}}
+                                                                        </ul>
 
                                                                     </div>
 

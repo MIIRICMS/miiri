@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-//    return view('dashboard');
-});
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {return view('pages.guest.home');})->name('home');
+Route::get('/login', function () { return view('pages.guest.login'); })->name('login');
+Route::get('/dashboard', function () { return view('pages.admin.dashboard'); })->name('dashboard');
+Route::get('/pages/home', function () { return view('pages.admin.home'); })->name('home.edit');
 
 Route::group(['prefix' => 'email'], function(){
     Route::get('inbox', function () { return view('pages.email.inbox'); });
