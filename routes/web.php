@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('home');
+//    return view('dashboard');
 });
 
 Route::group(['prefix' => 'email'], function(){

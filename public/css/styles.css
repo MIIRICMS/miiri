@@ -1,0 +1,85 @@
+/* Reset some default margin and padding for consistency */
+body, h1, h2, h3, p, ul, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply global styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* First Section Styles */
+.participate {
+    text-align: center;
+    padding: 100px;
+    color: white;
+}
+
+/* Second Section Styles */
+.innovation {
+    text-align: center;
+    padding: 100px;
+    color: white;
+}
+
+.horizontal-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.horizontal-list li {
+    padding: 5px;
+}
+
+/* Third Section - Registration Form Styles */
+.registration-form {
+    text-align: center;
+    padding: 100px;
+    background-color: green;
+}
+
+.lead-innovator-details, .team-members-details, .innovation-description {
+    border: 1px solid white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Fourth Section Styles */
+.participate-competitions {
+    text-align: center;
+    padding: 100px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.column {
+    text-align: center;
+}
+
+/* Apply button styles */
+button[type="submit"],
+.apply-button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Apply button hover effect */
+button[type="submit"]:hover,
+.apply-button:hover {
+    background-color: #8B008B;
+}
