@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Page;
+use Aws\StorageGateway\Exception\StorageGatewayException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class PageController extends Controller
 {
@@ -45,5 +47,21 @@ class PageController extends Controller
         }else{
             Redirect::back()->with("error","Page not found");
         }
+    }
+
+    public function upload(Request $request)
+    {
+        $contents = Storage::disk('s3')->get('uploads/Capture.JPG');
+        $path=$request->file("image")->store('/uploads','public_uploads');
+        dd($contents, $path);
+        try{
+
+//            $path = Storage::disk('s3')->put('path/to/file.ext', $request->image);
+        }catch (StorageGatewayException $exception){
+            dd($exception);
+        }
+
+        $path=$request->file("image")->store('/pages');
+        dd($path);
     }
 }

@@ -19,6 +19,7 @@ Route::get('/login', function () { return view('pages.guest.login'); })->name('l
 Route::get('/dashboard', function () { return view('pages.admin.dashboard'); })->name('dashboard');
 Route::post('/pages', [PageController::class,'updateContent'])->name('pages.update');
 Route::get('/pages/home', [PageController::class,'homeEdit'])->name('home.edit');
+Route::post('/upload', [PageController::class,'upload']);
 
 Route::group(['prefix' => 'email'], function(){
     Route::get('inbox', function () { return view('pages.email.inbox'); });
