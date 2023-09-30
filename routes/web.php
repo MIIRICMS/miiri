@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class,'home'])->name('home');
 Route::get('/login', function () { return view('pages.guest.login'); })->name('login');
 Route::get('/dashboard', function () { return view('pages.admin.dashboard'); })->name('dashboard');
-Route::post('/pages', [PageController::class,'updateContent'])->name('pages.update');
-Route::get('/pages/home', [PageController::class,'homeEdit'])->name('home.edit');
+Route::post('/pages', [PageController::class,'update'])->name('pages.update');
+Route::get('/pages/{name}', [PageController::class,'show'])->name('pages.show');
 Route::post('/upload', [PageController::class,'upload']);
 
 Route::group(['prefix' => 'email'], function(){

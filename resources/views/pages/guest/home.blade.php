@@ -369,7 +369,7 @@
                                                                                                                                         data-easeout="Power1.easeOut" data-slotamount="7"
                                                                                                                                         data-kenburns="off" data-masterspeed="default"
                                                                                                                                         data-index="rs-1">
-                                                                                                                                        <img class="rev-slidebg" src="{{asset('assets/images/home bg.png')}}"
+                                                                                                                                        <img class="rev-slidebg" src="{{asset($page->image_1)}}"
                                                                                                                                              alt data-duration="300" data-bgparallax="8"
                                                                                                                                              data-scalestart="120" data-scaleend="100"
                                                                                                                                              data-kenburns="on" data-bgrepeat="no-repeat"
@@ -462,7 +462,7 @@
                                                                                                         <div class="column-content-inner">
                                                                                                             <div class="widget gsc-video-box  clearfix">
                                                                                                                 <div class="video-inner">
-                                                                                                                    <div class="image"><img src="{{asset('assets/images/homeabout.png')}}" alt></div>
+                                                                                                                    <div class="image"><img src="{{$page->image_2}}" alt></div>
                                                                                                                     <div class="video-body">
                                                                                                                         <a class="popup-video gsc-video-link" href>
                                                                                                                             <i class="fa icon-play space-40"></i>

@@ -7,6 +7,7 @@ use Aws\StorageGateway\Exception\StorageGatewayException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Psy\Readline\Hoa\FileException;
 
 class PageController extends Controller
 {
@@ -14,16 +15,20 @@ class PageController extends Controller
     {
         $page = Page::where('name','home')->first();
         $contents = json_decode($page->contents);
-        return view('pages.guest.home', compact('contents'));
+        return view('pages.guest.home', compact('contents','page'));
     }
-    public function homeEdit()
+    public function show($name)
     {
-        $page = Page::where('name','home')->first();
-        $contents = json_decode($page->contents);
-        return view('pages.admin.home', compact('contents'));
+        $page = Page::where('name',$name)->first();
+        if(is_object($page)) {
+            $contents = json_decode($page->contents);
+            return view('pages.admin.pages', compact('contents','page'));
+        }else{
+            return Redirect::back();
+        }
     }
 
-    public function updateContent(Request $request)
+    public function update(Request $request)
     {
         $request->validate([
             'page' => 'required'
@@ -40,6 +45,51 @@ class PageController extends Controller
                    'description2'  => $request->description2,
                ])
             ]);
+
+            if(isset($request->image_1)){
+                if(file_exists($page->image_1)){
+                    Storage::disk("public_uploads")->delete($page->image_1);
+                }
+
+                try {
+                    $path=$request->file("image_1")->store('/uploads','public_uploads');
+                    $page->update([
+                        "image_1" => $path
+                    ]);
+                }catch (FileException $exception){
+                    //catch file exception
+                }
+            }
+
+            if(isset($request->image_2)){
+                if(file_exists($page->image_2)){
+                    Storage::disk("public_uploads")->delete($page->image_2);
+                }
+
+                try {
+                    $path=$request->file("image_2")->store('/uploads','public_uploads');
+                    $page->update([
+                        "image_2" => $path
+                    ]);
+                }catch (FileException $exception){
+                    //catch file exception
+                }
+            }
+
+            if(isset($request->image_3)){
+                if(file_exists($page->image_3)){
+                    Storage::disk("public_uploads")->delete($page->image_3);
+                }
+
+                try {
+                    $path=$request->file("image_3")->store('/uploads','public_uploads');
+                    $page->update([
+                        "image_3" => $path
+                    ]);
+                }catch (FileException $exception){
+                    //catch file exception
+                }
+            }
 
             return view('pages.admin.dashboard');
 //            Redirect::route('dashboard')->with("success","Page updated successfully");

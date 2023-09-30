@@ -12,8 +12,8 @@ class Page extends Model
     protected $fillable=[
         'name',
         'contents',
-        'image1',
-        'image2',
-        'image3',
+        'image_1',
+        'image_2',
+        'image_3',
     ];
 }

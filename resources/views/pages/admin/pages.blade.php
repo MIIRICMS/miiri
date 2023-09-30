@@ -24,10 +24,10 @@
 
         <h6 class="card-title">Page Content</h6>
 
-        <form class="forms-sample" method="post" action="{{route('pages.update')}}">
+        <form class="forms-sample" method="post" action="{{route('pages.update')}}" enctype="multipart/form-data">
             @csrf
 
-            <input type="hidden" name="page" value="HOME">
+            <input type="hidden" name="page" value="{{$page->name}}">
 
           <div class="mb-3">
             <label for="title1" class="form-label">Title #1</label>
@@ -49,6 +49,24 @@
                   {{$contents->description2}}
               </textarea>
           </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="image_1">Image 1 (Cover)</label>
+                <img class="img-fluid" src="{{asset($page->image_1)}}"  alt="">
+                <input class="form-control" type="file" id="image_1" name="image_1">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="image_2">Image 2</label>
+                <img class="img-fluid" src="{{asset($page->image_2)}}"  alt="">
+                <input class="form-control" type="file" id="image_2" name="image_2">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="image_3">Image 3</label>
+                <img class="img-fluid" src="{{asset($page->image_3)}}"  alt="">
+                <input class="form-control" type="file" id="image_3" name="image_3">
+            </div>
 
           <button type="submit" class="btn btn-primary me-2">Update</button>
         </form>
