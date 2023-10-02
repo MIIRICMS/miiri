@@ -15,14 +15,15 @@
             <div class="auth-form-wrapper px-4 py-5">
               <a href="#" class="noble-ui-logo d-block mb-2">MIIRI Login</a>
               <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
-              <form class="forms-sample">
+              <form class="forms-sample" method="post" action="{{route('login.post')}}">
+                  @csrf
                 <div class="mb-3">
                   <label for="userEmail" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="userEmail" placeholder="Email">
+                  <input name="email" type="email" class="form-control" id="userEmail" placeholder="Email">
                 </div>
                 <div class="mb-3">
                   <label for="userPassword" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="userPassword" autocomplete="current-password" placeholder="Password">
+                  <input name="password" type="password" class="form-control" id="userPassword" autocomplete="current-password" placeholder="Password">
                 </div>
                 <div class="form-check mb-3">
                   <input type="checkbox" class="form-check-input" id="authCheck">
@@ -31,7 +32,7 @@
                   </label>
                 </div>
                 <div>
-                  <a href="{{ route('dashboard') }}" class="btn btn-primary me-2 mb-2 mb-md-0">Login</a>
+                  <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0">Login</button>
                 </div>
               </form>
             </div>

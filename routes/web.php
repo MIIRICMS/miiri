@@ -12,14 +12,20 @@
 */
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class,'home'])->name('home');
-Route::get('/login', function () { return view('pages.guest.login'); })->name('login');
-Route::get('/dashboard', function () { return view('pages.admin.dashboard'); })->name('dashboard');
-Route::post('/pages', [PageController::class,'update'])->name('pages.update');
-Route::get('/pages/{name}', [PageController::class,'show'])->name('pages.show');
-Route::post('/upload', [PageController::class,'upload']);
+Route::get('/login', [UserController::class, 'loginView'])->name('login');
+Route::post('/login', [UserController::class, 'login'])->name('login.post');
+
+Route::group(['middleware'=>'auth'],function (){
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware("auth");
+    Route::get('/dashboard', function () { return view('pages.admin.dashboard'); })->name('dashboard');
+    Route::post('/pages', [PageController::class,'update'])->name('pages.update');
+    Route::get('/pages/{name}', [PageController::class,'show'])->name('pages.show');
+    Route::post('/upload', [PageController::class,'upload']);
+});
 
 Route::group(['prefix' => 'email'], function(){
     Route::get('inbox', function () { return view('pages.email.inbox'); });

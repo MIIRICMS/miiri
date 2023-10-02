@@ -1,6 +1,7 @@
 <?php
 
 use Database\Seeders\PageTableSeeder;
+use Database\Seeders\UserTableSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,5 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          $this->call(PageTableSeeder::class);
+         $this->call(UserTableSeeder::class);
     }
 }
