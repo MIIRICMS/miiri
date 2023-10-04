@@ -49,12 +49,12 @@
         </li>
 
         <li class="nav-item nav-category">Models</li>
-        <li class="nav-item {{ active_class(['/dashboard']) }}">
-            <a href="{{ route('dashboard') }}" class="nav-link">
-                <i class="link-icon" data-feather="box"></i>
-                <span class="link-title">Projects</span>
-            </a>
-        </li>
+{{--        <li class="nav-item {{ active_class(['/dashboard']) }}">--}}
+{{--            <a href="{{ route('dashboard') }}" class="nav-link">--}}
+{{--                <i class="link-icon" data-feather="box"></i>--}}
+{{--                <span class="link-title">Projects</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
         <li class="nav-item {{ active_class(['/admin/programs']) }}">
             <a href="{{ route('programs.index') }}" class="nav-link">
                 <i class="link-icon" data-feather="box"></i>
