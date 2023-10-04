@@ -30,9 +30,9 @@
 </div>
 
 <div class="">
-  <div class="grid-margin stretch-card">
+  <div class="row ">
       @foreach($programs as $program)
-    <div class="card">
+    <div class="card ">
       <div class="card-body">
           <div class="d-flex flex-column">
 
