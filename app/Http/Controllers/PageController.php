@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Page;
+use App\Program;
 use Aws\StorageGateway\Exception\StorageGatewayException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -13,9 +14,10 @@ class PageController extends Controller
 {
     public function home()
     {
+        $programs = Program::latest()->get();
         $page = Page::where('name','home')->first();
         $contents = json_decode($page->contents);
-        return view('pages.guest.home', compact('contents','page'));
+        return view('pages.guest.home', compact('contents','page', 'programs'));
     }
     public function show($name)
     {

@@ -17,6 +17,9 @@ class PageTableSeeder extends Seeder
     {
         Page::create([
             'name'      => 'home',
+            'image_1'      => 'assets/images/homebg.png',
+            'image_2'      => 'assets/images/homeabout.png',
+
             'contents'  => json_encode([
                 'title1'        => 'Welcome To',
                 'description1'  => '<p>MUST Institute of Industrial Research and Innovation</p>',

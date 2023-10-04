@@ -12,19 +12,27 @@
 */
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class,'home'])->name('home');
-Route::get('/login', [UserController::class, 'loginView'])->name('login');
+Route::get('/login', [UserController::class, 'loginView'])->name('login')->middleware('guest');
 Route::post('/login', [UserController::class, 'login'])->name('login.post');
 
-Route::group(['middleware'=>'auth'],function (){
+Route::group(['middleware'=>'auth', 'prefix' => 'admin'],function (){
     Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware("auth");
-    Route::get('/dashboard', function () { return view('pages.admin.dashboard'); })->name('dashboard');
+    Route::get('/', function () { return view('pages.admin.dashboard'); })->name('dashboard');
     Route::post('/pages', [PageController::class,'update'])->name('pages.update');
     Route::get('/pages/{name}', [PageController::class,'show'])->name('pages.show');
     Route::post('/upload', [PageController::class,'upload']);
+
+    Route::group(["prefix"=>"programs"], function (){
+        Route::get('/', [ProgramController::class, "index"])->name('programs.index');
+        Route::get('/create', [ProgramController::class, "create"])->name('programs.create');
+        Route::post('/store', [ProgramController::class, "store"])->name('programs.store');
+        Route::get('/view/{slug}', [ProgramController::class, "show"])->name('programs.show');
+    });
 });
 
 Route::group(['prefix' => 'email'], function(){

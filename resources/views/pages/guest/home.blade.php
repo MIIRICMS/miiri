@@ -544,7 +544,7 @@
                                                                                                                                  data-pagination="0" data-mouse_drag="1"
                                                                                                                                  data-touch_drag="1">
 
-
+                                                                                                                                @foreach($programs as $program)
                                                                                                                                 <div class="item">
                                                                                                                                     <div>
                                                                                                                                         <!-- Start Display article for teaser page -->
@@ -553,57 +553,28 @@
                                                                                                                                             <div class="service-images lightGallery">
                                                                                                                                                 <div>
                                                                                                                                                     <div class="image-item">
-                                                                                                                                                        <a href="/drupal/gito/sites/default/files/services/service-6.jpg"
+                                                                                                                                                        <a href="#"
                                                                                                                                                            class="zoomGallery" title
                                                                                                                                                            data-rel="lightGallery">
-                                                                              <span class="icon-expand"><i
-                                                                                      class="fa fa-expand"></i></span>
-                                                                                                                                                            <img src="{{asset('assets/images/service-4.jpg')}}"
-                                                                                                                                                                 class="hidden" alt>
+                                                                                                                                                            <span class="icon-expand"><i class="fa fa-expand"></i></span>
+                                                                                                                                                            <img src="{{asset($program->image)}}" class="hidden" alt>
                                                                                                                                                         </a>
-                                                                                                                                                        <a href="/drupal/gito/node/104"
-                                                                                                                                                           hreflang="en"><img src="{{asset('assets/images/prog1.png')}}"
-                                                                                                                                                                              alt loading="lazy" typeof="foaf:Image">
-
-                                                                                                                                                        </a>
-
+                                                                                                                                                        <a href="/drupal/gito/node/104" hreflang="en"><img src="{{asset($program->image)}}" alt loading="lazy" typeof="foaf:Image"></a>
                                                                                                                                                     </div>
                                                                                                                                                 </div>
 
                                                                                                                                             </div>
                                                                                                                                             <div class="service-content">
                                                                                                                                                 <div class="content-inner">
-                                                                                                                                                    <h3 class="title"><a
-                                                                                                                                                            href="/drupal/gito/node/104"
-                                                                                                                                                            rel="bookmark"><span>MUST Capacity
-                                                                                Building Programme</span>
-                                                                                                                                                        </a></h3>
+                                                                                                                                                    <h3 class="title"><a href="#" rel="bookmark"><span>{{$program->title}}</span></a></h3>
                                                                                                                                                     <div class="desc">
                                                                                                                                                         <div
                                                                                                                                                             class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                                                                                            <p>The Malawi University of Science and
-                                                                                                                                                                Technology (MUST) is part of a
-                                                                                                                                                                consortium with Land O’Lakes Venture37
-                                                                                                                                                                (formerly Land O’Lakes International
-                                                                                                                                                                Development), the University of
-                                                                                                                                                                Minnesota and Stellenbosch University,
-                                                                                                                                                                to establish the</p>
+                                                                                                                                                            <p>
+                                                                                                                                                                {!! $program->body !!}
+                                                                                                                                                            </p>
                                                                                                                                                         </div>
                                                                                                                                                     </div>
-                                                                                                                                                    <!-- <div class="service-action clearfix">
-            <div class="service-readmore"><a href="/drupal/gito/node/104">Read more  <i class="gv-icon-165"></i></a></div>
-                          <div class="service-contact
-
-                          ">
-                <a class="use-ajax" data-dialog-options="{" width":800,"dialogClass":"webform-modal"}" data-dialog-type="modal" href="http://localhost/private/gito/form/contact
-
-                          -service?title=Buffet">
-                  <i class=" "></i>  contact
-
-
-                </a>
-              </div>
-                      </div>  -->
                                                                                                                                                 </div>
                                                                                                                                             </div>
                                                                                                                                         </div>
@@ -612,7 +583,8 @@
 
                                                                                                                                     </div>
                                                                                                                                 </div>
-                                                                                                                                <div class="item">
+                                                                                                                                @endforeach
+                                                                                                                             {{--   <div class="item">
                                                                                                                                     <div>
                                                                                                                                         <!-- Start Display article for teaser page -->
 
@@ -877,7 +849,7 @@
                                                                                                                                         <!-- End Display article for teaser page -->
 
                                                                                                                                     </div>
-                                                                                                                                </div>
+                                                                                                                                </div>--}}
 
                                                                                                                             </div>
 
