@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Album;
+use App\News;
 use App\Page;
 use App\Program;
 use Aws\StorageGateway\Exception\StorageGatewayException;
@@ -15,9 +17,12 @@ class PageController extends Controller
     public function home()
     {
         $programs = Program::latest()->get();
+        $albums = Album::all();
+        $news = News::orderBy("date","desc")->get();
         $page = Page::where('name','home')->first();
         $contents = json_decode($page->contents);
-        return view('pages.guest.home', compact('contents','page', 'programs'));
+
+        return view('pages.guest.home', compact('contents','page', 'programs','news','albums'));
     }
     public function show($name)
     {
@@ -115,5 +120,27 @@ class PageController extends Controller
 
         $path=$request->file("image")->store('/pages');
         dd($path);
+    }
+
+    /* ADMIN EDIT ROUTES */
+    public function editHome()
+    {
+        $page = Page::where('name','home')->first();
+        if(is_object($page)) {
+            $contents = json_decode($page->contents);
+            return view('pages.admin.pages.home', compact('contents','page'));
+        }else{
+            return Redirect::back();
+        }
+    }
+    public function editAboutUs()
+    {
+        $page = Page::where('name','about-us')->first();
+        if(is_object($page)) {
+            $contents = json_decode($page->contents);
+            return view('pages.admin.pages.about-us', compact('contents','page'));
+        }else{
+            return Redirect::back();
+        }
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->json('contents');
             $table->string('image_1')->nullable();
             $table->string('image_2')->nullable();

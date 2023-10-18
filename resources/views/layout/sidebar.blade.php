@@ -27,7 +27,10 @@
             <div class="collapse {{ show_class(['pages/*']) }}" id="general">
                 <ul class="nav sub-menu">
                     <li class="nav-item">
-                        <a href="{{ route('pages.show',['name'=>'home']) }}" class="nav-link {{ active_class(['pages/home']) }}">Home page</a>
+                        <a href="{{ route('pages.home') }}" class="nav-link {{ active_class(['pages/home']) }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('pages.about-us') }}" class="nav-link {{ active_class(['pages/about-us']) }}">About Us</a>
                     </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a href="{{ url('/general/faq') }}" class="nav-link {{ active_class(['general/faq']) }}">Faq</a>--}}

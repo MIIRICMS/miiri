@@ -24,7 +24,8 @@ Route::group(['middleware'=>'auth', 'prefix' => 'admin'],function (){
     Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware("auth");
     Route::get('/', function () { return view('pages.admin.dashboard'); })->name('dashboard');
     Route::post('/pages', [PageController::class,'update'])->name('pages.update');
-    Route::get('/pages/{name}', [PageController::class,'show'])->name('pages.show');
+    Route::get('/pages/home', [PageController::class,'editHome'])->name('pages.home');
+    Route::get('/pages/about-us', [PageController::class,'editAboutUs'])->name('pages.about-us');
     Route::post('/upload', [PageController::class,'upload']);
 
     Route::group(["prefix"=>"programs"], function (){
@@ -35,7 +36,7 @@ Route::group(['middleware'=>'auth', 'prefix' => 'admin'],function (){
     });
 });
 
-Route::group(['prefix' => 'email'], function(){
+/*Route::group(['prefix' => 'email'], function(){
     Route::get('inbox', function () { return view('pages.email.inbox'); });
     Route::get('read', function () { return view('pages.email.read'); });
     Route::get('compose', function () { return view('pages.email.compose'); });
@@ -126,7 +127,7 @@ Route::group(['prefix' => 'error'], function(){
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
     return "Cache is cleared";
-});
+});*/
 
 // 404 for undefined routes
 Route::any('/{page?}',function(){
