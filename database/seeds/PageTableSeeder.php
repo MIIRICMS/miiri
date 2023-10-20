@@ -19,7 +19,7 @@ class PageTableSeeder extends Seeder
             'name'      => 'home',
             'image_1'   => 'assets/images/homebg.png',
             'image_2'   => 'assets/images/homeabout.png',
-            'image_3'   => 'assets/images/hsec3bg.jp',
+            'image_3'   => 'assets/images/hsec3bg.jpg',
 
             'contents'  => json_encode([
                 'title1'        => 'Welcome To',
@@ -41,7 +41,9 @@ class PageTableSeeder extends Seeder
                 'title2'        => 'WHO IS MIIRI ',
                 'description2'  => '<strong>Innovation Impact, Research Excellence, Next Generation Development, Support Innovation For Malawi</strong>',
                 'title3'        => 'About Us',
-                'description3'  => '<p>MIIRI is molded on the understanding that advancing development for the individual, the community, and the nation requires the systematic investment in innovation and innovativeness from the vast resources bank within MUST and beyond MUST’s borders. As such, MIIRI takes a keen interest in seeking, developing, and advancing innovative ideas through relevant industrial research. MIIRI is a leading innovation and commercialization hub supporting the industrialization pillar of the MW2063 agenda. MIIRI achieves this through offering practical solutions to emerging problems, particularly to the youth in most of the leading sectors, including .... </p>',
+                'description3'  => '<p>MIIRI is molded on the understanding that advancing development for the individual, the community, and the nation requires the systematic investment in innovation and innovativeness from the vast resources bank within MUST and beyond MUST’s borders. As such, MIIRI takes a keen interest in seeking, developing, and advancing innovative ideas through relevant industrial research.</p>
+<p>MIIRI is a leading innovation and commercialization hub supporting the industrialization pillar of the MW2063 agenda. MIIRI achieves this through offering practical solutions to emerging problems, particularly to the youth in most of the leading sectors, including agriculture and tourism. MIIRI has been working on many projects focusing on innovation prototype development, incubation service delivery for the youth through the application of tested business development models, industrial participation and commercialization of innovations, and mentorship programs.</p>
+<p>The Centre was established under MUST to sport job creation efforts and poverty reduction by providing expert-backed and impactful interventions to MSMEs and youthful innovators as guided by the MW2063 agenda. The Centre has unparalleled experience in ecosystem development, cultural and tourism research, Agri-Tech innovations, and incubation service provision. The Centre is composed of well-qualified Malawian nationals who understand challenges faced by MSMEs and the application of Emerging Technologies to youth and women challenges in the agriculture and tourism sectors.</p>',
                 'values'        => [
                     'vision'            => 'A modern and dynamic think-tank centre of excellence recognised for championing Science, Technology, Innovation (STI) for transformative industrialisation in Malawi.',
                     'mission'           => 'To accelerate transformative industrialisation in Malawi through human-centred and demand-driven industrial research, innovation, technology development and transfer.',
@@ -61,6 +63,22 @@ class PageTableSeeder extends Seeder
                         "body"  => "Please join us for the 7th Annual Finish Chelsea’s Run in honor of Chelsea King.",
                     ],
                 ],
+                ]),
+        ]);
+
+        Page::create([
+            'name'      => 'research-and-innovations',
+            'image_1'   => 'assets/images/group 1.png',
+            'image_2'   => 'assets/images/researchcuriosity.png',
+            'image_3'   => 'assets/images/innovationvideo.png',
+
+            'contents'  => json_encode([
+                'title1'        => 'Research and Innovation',
+                'description1'  => '',
+                'title2'        => 'RESEARCH',
+                'description2'  => '<p>Every great research project begins with a curiosity-driven question.</p>',
+                'title3'        => 'INNOVATION LEADER',
+                'description3'  => '<p>Embrace the spark of innovation that resides within you, for it holds the power to illuminate uncharted paths and revolutionize the world around you.</p>',
                 ]),
         ]);
 

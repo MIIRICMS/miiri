@@ -149,7 +149,7 @@ Welcome to</div><div class="tp-caption text slide-style-2 " data-x="center" data
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div class="button-action">
-                                                                                                            <a href="about.html" class="btn-theme">Read more</a>
+                                                                                                            <a  href="{{route('about-us')}}" class="btn-theme">Read more</a>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -258,14 +258,14 @@ Welcome to</div><div class="tp-caption text slide-style-2 " data-x="center" data
                                                                                                                                                     <span class="icon-expand"><i class="fa fa-expand"></i></span>
                                                                                                                                                     <img src="{{asset($program->image)}}" class="hidden" alt>
                                                                                                                                                 </a>
-                                                                                                                                                <a href="#" hreflang="en"><img src="{{asset($program->image)}}" alt loading="lazy" typeof="foaf:Image"></a>
+                                                                                                                                                <a  href="{{route('programs.view',['slug'=>$program->slug])}}" hreflang="en"><img src="{{asset($program->image)}}" alt loading="lazy" typeof="foaf:Image"></a>
                                                                                                                                             </div>
                                                                                                                                         </div>
 
                                                                                                                                     </div>
                                                                                                                                     <div class="service-content">
                                                                                                                                         <div class="content-inner">
-                                                                                                                                            <h3 class="title"><a href="#" rel="bookmark"><span>{{$program->title}}</span></a></h3>
+                                                                                                                                            <h3 class="title"><a  href="{{route('programs.view',['slug'=>$program->slug])}}" rel="bookmark"><span>{{$program->title}}</span></a></h3>
                                                                                                                                             <div class="desc">
                                                                                                                                                 <div
                                                                                                                                                     class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
@@ -301,7 +301,7 @@ Welcome to</div><div class="tp-caption text slide-style-2 " data-x="center" data
                                                                          class="gva-parallax-inner skrollable skrollable-between bg-size-default"
                                                                          data-bottom-top="top: -68%;" data-top-bottom="top: 0%;"></div>
                                                                     <ul class="nav nav-tabs links-ajax col text-center" data-load="ajax">
-                                                                        <li><a href="#" data-panel="#tab-item-5cu962"
+                                                                        <li><a href="{{route('programs-and-projects')}}" data-panel="#tab-item-5cu962"
                                                                                class="active">explore our Programs</a></li>
                                                                         <!--<li><a href="javascript:void(0);" data-panel="#tab-item-5cu963">Snacks</a></li>
 <li><a href="javascript:void(0);" data-panel="#tab-item-5cu964">Dinner</a></li>
@@ -366,15 +366,14 @@ Welcome to</div><div class="tp-caption text slide-style-2 " data-x="center" data
                                                                                                                                                         href="#"
                                                                                                                                                         hreflang="en">{{$_news->category->name}}</a> </div>
                                                                                                                                                 <div class="post-title"> <a
-                                                                                                                                                        href="#"
+                                                                                                                                                        href="{{route('news.view',['slug'=>$_news->slug])}}"
                                                                                                                                                         hreflang="en">{{$_news->title}}</a> </div>
                                                                                                                                                 <div class="post-meta"><span
                                                                                                                                                         class="post-created">{{date("d M Y",$_news->date)}}
                                                                               </span> - <span
                                                                                                                                                         class="post-comment"></span></div>
                                                                                                                                                 <div class="post-body">
-                                                                                                                                                    {!! $_news->body !!}
-
+                                                                                                                                                    {{\Illuminate\Support\Str::limit(strip_tags($_news->body), 300)}}
                                                                                                                                                 </div>
                                                                                                                                             </div>
                                                                                                                                         </div>

@@ -16,9 +16,22 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [PageController::class,'home'])->name('home');
 Route::get('/login', [UserController::class, 'loginView'])->name('login')->middleware('guest');
 Route::post('/login', [UserController::class, 'login'])->name('login.post');
+
+Route::get('/', [PageController::class,'home'])->name('home');
+Route::get('/research-and-innovations', [PageController::class,'researchAndInnovations'])->name('research-and-innovations');
+Route::get('/research-and-innovations/{slug}', [PageController::class,'researchAndInnovationsShow'])->name('research-and-innovations.view');
+Route::get('/about-us', [PageController::class,'aboutUs'])->name('about-us');
+Route::get('/team', [PageController::class,'team'])->name('team');
+Route::get('/partners', [PageController::class,'partners'])->name('partners');
+Route::get('/publications', [PageController::class,'publications'])->name('publications');
+Route::get('/news', [PageController::class,'news'])->name('news');
+Route::get('/news/{slug}', [PageController::class,'newsShow'])->name('news.view');
+Route::get('/contact-us', [PageController::class,'contactUs'])->name('contact-us');
+Route::get('/programs-and-projects', [PageController::class,'programsAndProjects'])->name('programs-and-projects');
+Route::get('/programs-and-projects/program/{slug}', [PageController::class,'programsShow'])->name('programs.view');
+Route::get('/programs-and-projects/project/{slug}', [PageController::class,'projectsShow'])->name('projects.view');
 
 Route::group(['middleware'=>'auth', 'prefix' => 'admin'],function (){
     Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware("auth");

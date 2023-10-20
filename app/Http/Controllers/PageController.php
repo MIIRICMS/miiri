@@ -6,6 +6,8 @@ use App\Album;
 use App\News;
 use App\Page;
 use App\Program;
+use App\Project;
+use App\Research;
 use Aws\StorageGateway\Exception\StorageGatewayException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -24,6 +26,112 @@ class PageController extends Controller
 
         return view('pages.guest.home', compact('contents','page', 'programs','news','albums'));
     }
+
+    public function aboutUs()
+    {
+        $page = Page::where('name','about-us')->first();
+        $contents = json_decode($page->contents);
+
+        return view('pages.guest.about-us', compact('contents','page'));
+    }
+    public function researchAndInnovations()
+    {
+        $researches = Research::where("type",0)->orderBy("date","desc")->get();
+        $innovations = Research::where("type",1)->orderBy("date","desc")->get();
+        $page = Page::where('name','research-and-innovations')->first();
+        $contents = json_decode($page->contents);
+
+        return view('pages.guest.research-and-innovations', compact('contents','page', 'researches', 'innovations'));
+    }
+    public function researchAndInnovationsShow(String $slug)
+    {
+        $research = Research::where("slug",$slug)->first();
+        if(is_object($research)){
+            return view('pages.guest.research-and-innovations-view', compact('research'));
+        }else{
+            return Redirect::back();
+        }
+
+    }
+
+    public function team()
+    {
+        $page = Page::where('name','team')->first();
+//        $contents = json_decode($page->contents);
+        $contents = [];
+        return view('pages.guest.team', compact('contents','page'));
+    }
+    public function partners()
+    {
+        $page = Page::where('name','partners')->first();
+//        $contents = json_decode($page->contents);
+        $contents = [];
+        return view('pages.guest.partners', compact('contents','page'));
+    }
+    public function publications()
+    {
+        $page = Page::where('name','publications')->first();
+//        $contents = json_decode($page->contents);
+        $contents = [];
+        return view('pages.guest.publications', compact('contents','page'));
+    }
+    public function news()
+    {
+        $news = News::orderBy("date","desc")->get();
+        $page = Page::where('name','news')->first();
+//        $contents = json_decode($page->contents);
+        $contents = [];
+        return view('pages.guest.news', compact('contents','page','news'));
+    }
+    public function newsShow(String $slug)
+    {
+        $news = News::where("slug",$slug)->first();
+        if(is_object($news)){
+            return view('pages.guest.news-view', compact('news'));
+        }else{
+            return Redirect::back();
+        }
+
+    }
+    public function contactUs()
+    {
+        $page = Page::where('name','contact-us')->first();
+//        $contents = json_decode($page->contents);
+        $contents = [];
+        return view('pages.guest.contact-us', compact('contents','page'));
+    }
+
+    public function programsAndProjects()
+    {
+        $programs = Program::latest()->get();
+        $projects = Project::latest()->get();
+        $page = Page::where('name','programs-and-projects')->first();
+//        $contents = json_decode($page->contents);
+        $contents = [];
+
+        return view('pages.guest.programs-and-projects', compact('contents','page', 'programs','projects'));
+    }
+    public function programsShow(String $slug)
+    {
+        $program = Program::where("slug",$slug)->first();
+        if(is_object($program)){
+            return view('pages.guest.programs-view', compact('program'));
+        }else{
+            return Redirect::back();
+        }
+
+    }
+    public function projectsShow(String $slug)
+    {
+        $program = Project::where("slug",$slug)->first();
+        if(is_object($program)){
+            return view('pages.guest.programs-view', compact('program'));
+        }else{
+            return Redirect::back();
+        }
+
+    }
+
     public function show($name)
     {
         $page = Page::where('name',$name)->first();

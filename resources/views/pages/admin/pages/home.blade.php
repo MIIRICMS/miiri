@@ -1,7 +1,7 @@
 @extends('layout.auth')
 
 @section('title')
-    <title>MIIRI| Manage Home Page</title>
+    <title>MIIRI| Manage Home</title>
 @endsection
 
 @push('plugin-styles')
@@ -51,21 +51,39 @@
           </div>
 
             <div class="mb-3">
-                <label class="form-label" for="image_1">Image 1 (Cover)</label>
-                <img class="img-fluid" src="{{asset($page->image_1)}}"  alt="">
-                <input class="form-control" type="file" id="image_1" name="image_1">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8">
+                        <img class="img-fluid" src="{{asset($page->image_1)}}"  alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label class="form-label" for="image_1">Image 1</label>
+                        <input class="form-control" type="file" id="image_1" name="image_1">
+                    </div>
+                </div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label" for="image_2">Image 2</label>
-                <img class="img-fluid" src="{{asset($page->image_2)}}"  alt="">
-                <input class="form-control" type="file" id="image_2" name="image_2">
+                 <div class="row">
+                    <div class="col-sm-12 col-md-8">
+                        <img class="img-fluid" src="{{asset($page->image_2)}}"  alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label class="form-label" for="image_2">Image 2</label>
+                        <input class="form-control" type="file" id="image_2" name="image_2">
+                    </div>
+                </div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label" for="image_3">Image 3</label>
-                <img class="img-fluid" src="{{asset($page->image_3)}}"  alt="">
-                <input class="form-control" type="file" id="image_3" name="image_3">
+                 <div class="row">
+                    <div class="col-sm-12 col-md-8">
+                        <img class="img-fluid" src="{{asset($page->image_3)}}"  alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label class="form-label" for="image_3">Image 3</label>
+                        <input class="form-control" type="file" id="image_3" name="image_3">
+                    </div>
+                </div>
             </div>
 
           <button type="submit" class="btn btn-primary me-2">Update</button>

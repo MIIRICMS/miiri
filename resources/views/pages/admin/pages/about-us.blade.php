@@ -49,23 +49,93 @@
                   {{$contents->description2}}
               </textarea>
           </div>
+          <div class="mb-3">
+            <label for="title3" class="form-label">Title #3</label>
+            <input value="{{$contents->title3}}" type="text" class="form-control" name="title3" id="title3" autocomplete="off">
+          </div>
+          <div class="mb-3">
+              <label for="tinymceExample" class="form-label">Description #3</label>
+              <textarea class="form-control editor" name="description3" id="tinymceExample" rows="10">
+                  {{$contents->description3}}
+              </textarea>
+          </div>
+
 
             <div class="mb-3">
-                <label class="form-label" for="image_1">Image 1 (Cover)</label>
-                <img class="img-fluid" src="{{asset($page->image_1)}}"  alt="">
-                <input class="form-control" type="file" id="image_1" name="image_1">
+                <label for="vision" class="form-label">Vision</label>
+                <input value="{{$contents->values->vision}}" type="text" class="form-control" name="vision" id="vision" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="mission" class="form-label">Mission</label>
+                <input value="{{$contents->values->mission}}" type="text" class="form-control" name="mission" id="mission" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="key_principles" class="form-label">Key Principles</label>
+                <input value="{{$contents->values->key_principles}}" type="text" class="form-control" name="key_principles" id="key_principles" autocomplete="off">
+            </div>
+
+            {{--First--}}
+            <div class="mb-3">
+                <label for="people_and_society_title_1" class="form-label">People and Society Title #1</label>
+                <input value="{{$contents->people_and_society[0]->title}}" type="text" class="form-control" name="people_and_society_title_1" id="people_and_society_title_1" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="people_and_society_body_1" class="form-label">People and Society Body #1</label>
+                <input value="{{$contents->people_and_society[0]->body}}" type="text" class="form-control" name="people_and_society_body_1" id="people_and_society_body_1" autocomplete="off">
+            </div>
+            {{--Second--}}
+            <div class="mb-3">
+                <label for="people_and_society_title_2" class="form-label">People and Society Title #2</label>
+                <input value="{{$contents->people_and_society[1]->title}}" type="text" class="form-control" name="people_and_society_title_2" id="people_and_society_title_2" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="people_and_society_body_2" class="form-label">People and Society Body #2</label>
+                <input value="{{$contents->people_and_society[1]->body}}" type="text" class="form-control" name="people_and_society_body_2" id="people_and_society_body_2" autocomplete="off">
+            </div>
+            {{--Third--}}
+            <div class="mb-3">
+                <label for="people_and_society_title_3" class="form-label">People and Society Title #3</label>
+                <input value="{{$contents->people_and_society[2]->title}}" type="text" class="form-control" name="people_and_society_title_3" id="people_and_society_title_1" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="people_and_society_body_3" class="form-label">People and Society Body #3</label>
+                <input value="{{$contents->people_and_society[2]->body}}" type="text" class="form-control" name="people_and_society_body_3" id="people_and_society_body_1" autocomplete="off">
             </div>
 
             <div class="mb-3">
-                <label class="form-label" for="image_2">Image 2</label>
-                <img class="img-fluid" src="{{asset($page->image_2)}}"  alt="">
-                <input class="form-control" type="file" id="image_2" name="image_2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8">
+                        <img class="img-fluid" src="{{asset($page->image_1)}}"  alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label class="form-label" for="image_1">Image 1</label>
+                        <input class="form-control" type="file" id="image_1" name="image_1">
+                    </div>
+                </div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label" for="image_3">Image 3</label>
-                <img class="img-fluid" src="{{asset($page->image_3)}}"  alt="">
-                <input class="form-control" type="file" id="image_3" name="image_3">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8">
+                        <img class="img-fluid" src="{{asset($page->image_2)}}"  alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label class="form-label" for="image_2">Image 2</label>
+                        <input class="form-control" type="file" id="image_2" name="image_2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8">
+                        <img class="img-fluid" src="{{asset($page->image_3)}}"  alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label class="form-label" for="image_3">Image 3</label>
+                        <input class="form-control" type="file" id="image_3" name="image_3">
+                    </div>
+                </div>
             </div>
 
           <button type="submit" class="btn btn-primary me-2">Update</button>

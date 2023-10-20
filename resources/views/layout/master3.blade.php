@@ -41,9 +41,9 @@
   <link href="{{ asset('css/css_I7RNaJANgIQSJ3rw79VJ_zxkHEGcnLsEj_6Kjz9WOMg.css') }}" rel="stylesheet" />
   <!-- end common css -->
 
-    <!-- common css -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
-    <!-- end common css -->
+{{--    <!-- common css -->--}}
+{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />--}}
+{{--    <!-- end common css -->--}}
 
     <link href="{{ asset('assets/plugins/fullcalendar/main.min.css') }}" rel="stylesheet" />
     <style class="customize"></style>
@@ -155,7 +155,7 @@
                               <div class="col-md-3 col-sm-6 col-xs-8 branding">
                                   <div>
 
-                                      <a href="/drupal/gito/" title="Home" rel="home" class="site-branding-logo">
+                                      <a href="{{route('home')}}" title="Home" rel="home" class="site-branding-logo">
                                           <img src="{{asset('assets/images/logo.png')}}" alt="Home">
 
                                       </a>
@@ -187,7 +187,7 @@
 
 
                                                                           <li class="menu-item menu-item--active-trail ">
-                                                                              <a href="index.html">
+                                                                              <a href="{{route('home')}}">
                                                                                   Home
                                                                                   <!--<span class="icaret nav-plus fa fa-angle-down"></span>-->
 
@@ -198,7 +198,7 @@
                                                                           </li>
 
                                                                           <li class="menu-item menu-item--expanded ">
-                                                                              <a href="about.html">
+                                                                              <a href="{{route('about-us')}}">
                                                                                   About
                                                                                   <span class="icaret nav-plus fa fa-angle-down"></span>
 
@@ -207,15 +207,14 @@
                                                                               <ul class="menu sub-menu">
 
                                                                                   <li class="menu-item">
-                                                                                      <a href="team.html">
+                                                                                      <a href="{{route('team')}}">
                                                                                           Team
-
                                                                                       </a>
 
                                                                                   </li>
 
                                                                                   <li class="menu-item">
-                                                                                      <a href="partners.html">
+                                                                                      <a href="{{route('partners')}}">
                                                                                           Partners
 
                                                                                       </a>
@@ -230,15 +229,15 @@
                                                                           </li>
 
                                                                           <li class="menu-item ">
-                                                                              <a href="Research and Innovations.html">
+                                                                              <a href="{{route('research-and-innovations')}}">
 
                                                                                   Research & Innovations
                                                                               </a>
 
                                                                           </li>
 
-                                                                          <li class="menu-item ">
-                                                                              <a href="Programmes_Projects.html">
+                                                          f                <li class="menu-item ">
+                                                                              <a href="{{route('programs-and-projects')}}">
                                                                                   Programmes & Projects
 
                                                                               </a>
@@ -246,21 +245,21 @@
                                                                           </li>
 
                                                                           <li class="menu-item ">
-                                                                              <a href="publications.html">
+                                                                              <a href="{{route('publications')}}">
                                                                                   Publications
 
                                                                               </a>
 
                                                                           </li>
                                                                           <li class="menu-item ">
-                                                                              <a href="news _ events.html">
+                                                                              <a href="{{route('news')}}">
                                                                                   News
 
                                                                               </a>
 
                                                                           </li>
                                                                           <li class="menu-item ">
-                                                                              <a href="contact.html">
+                                                                              <a href="{{route('contact-us')}}">
                                                                                   Contact Us
 
 
@@ -292,40 +291,40 @@
                                                       <span class="three"></span>
                                                   </div>
 
-                                                  <div class="gva-search-region search-region">
-                                                      <span class="icon"><i class="gv-icon-52"></i></span>
-                                                      <div class="search-content">
-                                                          <div>
-                                                              <div class="search-block-form block block-search container-inline"
-                                                                   data-drupal-selector="search-block-form" id="block-gavias-gito-searchform"
-                                                                   role="search">
+{{--                                                  <div class="gva-search-region search-region">--}}
+{{--                                                      <span class="icon"><i class="gv-icon-52"></i></span>--}}
+{{--                                                      <div class="search-content">--}}
+{{--                                                          <div>--}}
+{{--                                                              <div class="search-block-form block block-search container-inline"--}}
+{{--                                                                   data-drupal-selector="search-block-form" id="block-gavias-gito-searchform"--}}
+{{--                                                                   role="search">--}}
 
 
-                                                                  <form action="/drupal/gito/search/node" method="get" id="search-block-form"
-                                                                        accept-charset="UTF-8" class="search-form search-block-form">
-                                                                      <div
-                                                                          class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
-                                                                          <label for="edit-keys" class="visually-hidden">Search</label>
-                                                                          <input title="Enter the terms you wish to search for."
-                                                                                 data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value
-                                                                                 size="15" maxlength="128" class="form-search">
+{{--                                                                  <form action="/drupal/gito/search/node" method="get" id="search-block-form"--}}
+{{--                                                                        accept-charset="UTF-8" class="search-form search-block-form">--}}
+{{--                                                                      <div--}}
+{{--                                                                          class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">--}}
+{{--                                                                          <label for="edit-keys" class="visually-hidden">Search</label>--}}
+{{--                                                                          <input title="Enter the terms you wish to search for."--}}
+{{--                                                                                 data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value--}}
+{{--                                                                                 size="15" maxlength="128" class="form-search">--}}
 
-                                                                      </div>
-                                                                      <div data-drupal-selector="edit-actions"
-                                                                           class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input
-                                                                              class="search-form__submit button js-form-submit form-submit"
-                                                                              data-drupal-selector="edit-submit" type="submit" id="edit-submit--2"
-                                                                              value="Search">
-                                                                      </div>
+{{--                                                                      </div>--}}
+{{--                                                                      <div data-drupal-selector="edit-actions"--}}
+{{--                                                                           class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input--}}
+{{--                                                                              class="search-form__submit button js-form-submit form-submit"--}}
+{{--                                                                              data-drupal-selector="edit-submit" type="submit" id="edit-submit--2"--}}
+{{--                                                                              value="Search">--}}
+{{--                                                                      </div>--}}
 
-                                                                  </form>
+{{--                                                                  </form>--}}
 
-                                                              </div>
+{{--                                                              </div>--}}
 
-                                                          </div>
+{{--                                                          </div>--}}
 
-                                                      </div>
-                                                  </div>
+{{--                                                      </div>--}}
+{{--                                                  </div>--}}
                                               </div>
                                           </div>
                                       </div>
@@ -344,16 +343,16 @@
               <div class="clearfix"></div>
 
 
-              <div class="help gav-help-region">
-                  <div class="container">
-                      <div class="content-inner">
-                          <div>
-                              <div data-drupal-messages-fallback class="hidden"></div>
-                          </div>
+{{--              <div class="help gav-help-region">--}}
+{{--                  <div class="container">--}}
+{{--                      <div class="content-inner">--}}
+{{--                          <div>--}}
+{{--                              <div data-drupal-messages-fallback class="hidden"></div>--}}
+{{--                          </div>--}}
 
-                      </div>
-                  </div>
-              </div>
+{{--                      </div>--}}
+{{--                  </div>--}}
+{{--              </div>--}}
 
 
               <div class="clearfix"></div>
@@ -434,12 +433,12 @@
                                               <div class="row">
                                                   <div class="col-sm-6">
                                                       <ul class="menu">
-                                                          <li><a href="#"> About</a></li>
+                                                          <li><a href="{{route('about-us')}}"> About</a></li>
                                                           <li><a href="#"> Innovation</a></li>
                                                           <li><a href="#"> programmes</a></li>
-                                                          <li><a href="#"> Team</a></li>
-                                                          <li><a href="#"> News & Events</a></li>
-                                                          <li><a href="#"> publications</a></li>
+                                                          <li><a href="{{route('team')}}"> Team</a></li>
+                                                          <li><a href="{{route('news')}}"> News & Events</a></li>
+                                                          <li><a href="{{route('publications')}}"> publications</a></li>
                                                       </ul>
                                                   </div>
                                                   <div class="col-sm-6">
