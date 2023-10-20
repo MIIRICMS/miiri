@@ -12,7 +12,7 @@
     <div id="content" class="content content-full">
         <div class="container-full">
             <div class="content-main-inner">
-                <div id="page-main-content" class="main-content">
+                <div>
                     <div class="main-content-inner">
 
                         <div class="content-main">
