@@ -58,7 +58,7 @@
                                                                                                                         <li data-transition="random" data-easein="Power0.easeIn" data-easeout="Power1.easeOut" data-slotamount="7" data-kenburns="off" data-masterspeed="default" data-index="rs-1">
                                                                                                                             <img class="rev-slidebg" src="{{asset('assets/images/about1.png')}}" alt data-duration="300" data-bgparallax="8" data-scalestart="120" data-scaleend="100" data-kenburns="on" data-bgrepeat="no-repeat" style="background-color:#f2f2f2" data-bgfit="cover" data-bgposition="center top"><div class="tp-caption text slide-style-1 " data-x="center" data-y="325" data-start="1000.00" data-transform_idle="o:1;" data-transform_in="x:inherit;y:inherit;z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;s:600;e:easeOutExpo;" style="z-index:4">
                                                                                                                                 {{$contents->title1}}</div><h4 class="tp-caption text slide-style-2" data-x="center" data-y="415" data-start="1500.00" data-transform_idle="o:1;" data-transform_in="x:inherit;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:600;e:easeOutExpo;" style="z-index:3; font-size: 30px;">
-                                                                                                                                <b>{{$contents->description1}}</b>
+                                                                                                                                <b>{!! $contents->description1 !!}</b>
                                                                                                                             </h4>
                                                                                                                         </li>
 
@@ -143,7 +143,7 @@
                                                                         <div class="column-content-inner">
                                                                             <div class="custom-description align-right">
                                                                                 <p style="font-size: 20px; margin-top: 50px; text-align: center; font-weight: bold;">
-                                                                                    {{$contents->description2}}
+                                                                                    {!! $contents->description2 !!}
                                                                                 </p>
                                                                             </div>
                                                                         </div>
