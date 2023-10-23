@@ -39,6 +39,9 @@ Route::group(['middleware'=>'auth', 'prefix' => 'admin'],function (){
     Route::post('/pages', [PageController::class,'update'])->name('pages.update');
     Route::get('/pages/home', [PageController::class,'editHome'])->name('pages.home');
     Route::get('/pages/about-us', [PageController::class,'editAboutUs'])->name('pages.about-us');
+    Route::get('/pages/research-and-innovations', [PageController::class,'editResearchAndInnovations'])->name('pages.research-and-innovations');
+    Route::get('/pages/team', [PageController::class,'editTeam'])->name('pages.team');
+    Route::get('/pages/partners', [PageController::class,'editPartners'])->name('pages.partners');
     Route::post('/upload', [PageController::class,'upload']);
 
     Route::group(["prefix"=>"programs"], function (){

@@ -82,6 +82,166 @@ class PageTableSeeder extends Seeder
                 ]),
         ]);
 
+        Page::create([
+            'name'      => 'team',
+            'image_1'   => 'assets/images/bg-team.jpg',
+            'image_2'   => '',
+            'image_3'   => '',
+
+            'contents'  => json_encode([
+                [
+                    'name'      => 'Professor David Dalison Mkwambisi',
+                    'title'     => 'Director of MIIRI',
+                    'image'     => 'assets/images/team-1.png',
+                ],
+                [
+                    'name'      => 'Dr. Tabitha Nindi',
+                    'title'     => 'Research Fellow and Science Tech',
+                    'image'     => 'assets/images/team-2.png',
+                ],
+                [
+                    'name'      => 'Dr. Edda Lungu',
+                    'title'     => 'Post Doc. Fellow - Food and Nutrition',
+                    'image'     => 'assets/images/team-3.png',
+                ],
+                [
+                    'name'      => 'Dr. Joseph Issa',
+                    'title'     => 'Research Fellow and Science Tech',
+                    'image'     => 'assets/images/team-4.png',
+                ],
+                [
+                    'name'      => 'Wongani Langa',
+                    'title'     => 'Research Fellow - Technology and Innovations',
+                    'image'     => 'assets/images/team-5.png',
+                ],
+                [
+                    'name'      => 'Zalerapi Mhango',
+                    'title'     => 'Research Fellow - Technology and Innovations',
+                    'image'     => 'assets/images/team-6.png',
+                ],
+                [
+                    'name'      => 'Emmanuel Likoya',
+                    'title'     => 'Post Doc. Fellow - Food and Nutrition',
+                    'image'     => 'assets/images/team-7.jpg',
+                ],
+                [
+                    'name'      => 'Patrick Chimseu',
+                    'title'     => 'Projects Officer',
+                    'image'     => 'assets/images/team-8.png',
+                ],
+                [
+                    'name'      => 'Esther Chole',
+                    'title'     => 'Secretary',
+                    'image'     => 'assets/images/team-9.jpg',
+                ],
+            ]),
+        ]);
+
+        Page::create([
+            'name'      => 'partners',
+            'image_1'   => 'assets/images/partners_bg.png',
+            'image_2'   => '',
+            'image_3'   => '',
+
+            'contents'  => json_encode([
+                'title1'        => 'Partners',
+                'description1'  => '',
+                'title2'        => 'Find out More about or Partnerships',
+                'description2'  => '<p>At MIIRI, we believe that innovation knows no boundaries. Our commitment to pushing the boundaries of knowledge and creating real-world impact drives us to seek dynamic collaborations with organizations and individuals who share our vision.</p>',
+                'title3'        => '',
+                'description3'  => '',
+                'partners'      => [
+                    [
+                        'name'          => 'NCST',
+                        'description'   => 'The National Council for Science and Technology',
+                        'image'         => 'assets/images/NCST.png',
+                    ],
+                    [
+                        'name'          => 'CAT',
+                        'description'   => 'The Centre for Agriculture Transformation',
+                        'image'         => 'assets/images/cat.png',
+                    ],
+                    [
+                        'name'          => 'USAID',
+                        'description'   => 'United States Agency for International Development',
+                        'image'         => 'assets/images/USAID.png',
+                    ],
+                    [
+                        'name'          => 'CARE',
+                        'description'   => 'The Cooperative for Assistance and Relief Everywhere is one of the',
+                        'image'         => 'assets/images/CARE.png',
+                    ],
+                    [
+                        'name'          => 'FSNet',
+                        'description'   => 'The Food Systems Research Networks for Africa',
+                        'image'         => 'assets/images/FSNet.png',
+                    ],
+                    [
+                        'name'          => 'MSU',
+                        'description'   => 'The Michigan State University',
+                        'image'         => 'assets/images/MSU.png',
+                    ],
+                    [
+                        'name'          => 'UNC',
+                        'description'   => 'The University of North Carolin',
+                        'image'         => 'assets/images/unc.png',
+                    ],
+                    [
+                        'name'          => 'University of Minnesota',
+                        'description'   => 'The University of Minnesota',
+                        'image'         => 'assets/images/UoM.png',
+                    ],
+                    [
+                        'name'          => 'Stellenbosch University',
+                        'description'   => 'The Stellenbosch University',
+                        'image'         => 'assets/images/Stellenbosch.png',
+                    ],
+                    [
+                        'name'          => 'Mzuzu University (MZUNI)',
+                        'description'   => 'The Mzuzu University',
+                        'image'         => 'assets/images/Mzuni.png',
+                    ],
+                    [
+                        'name'          => 'TEVETA',
+                        'description'   => 'The Technical, Entrepreneurial and Vocational Education and Training (TEVET) Authority (TEVETA)',
+                        'image'         => 'assets/images/Teveta.png',
+                    ],
+                    [
+                        'name'          => 'Press Trust',
+                        'description'   => 'It is one of the',
+                        'image'         => 'assets/images/Press trust.png',
+                    ],
+                    [
+                        'name'          => 'Mikolongwe School of Veterinary Sciences',
+                        'description'   => 'The Mikolongwe ',
+                        'image'         => 'assets/images/MK.png',
+                    ],
+                    [
+                        'name'          => 'M-Hub',
+                        'description'   => '',
+                        'image'         => 'assets/images/mhub.png',
+                    ],
+                    [
+                        'name'          => 'Kamuzu Academy (KA)',
+                        'description'   => 'Kamuzu Acadamy is part of the',
+                        'image'         => 'assets/images/KA.png',
+                    ],
+                    [
+                        'name'          => 'University of Botswana (UOB)',
+                        'description'   => 'The University of Botswana',
+                        'image'         => 'assets/images/UoB.png',
+                    ],
+                    [
+                        'name'          => 'Thyolo District Council',
+                        'description'   => 'As on of the most',
+                        'image'         => 'assets/images/MK.png',
+                    ],
+
+
+                ]
+            ]),
+        ]);
+
 
     }
 }

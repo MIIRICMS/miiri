@@ -91,51 +91,48 @@
                                                         </header>
 
 
-                                                        <div data-drupal-views-infinite-scroll-content-wrapper
-                                                             class="views-infinite-scroll-content-wrapper clearfix">
+                                                        <div class="views-infinite-scroll-content-wrapper clearfix">
 
 
                                                             <div class="views-view-grid horizontal cols-3 clearfix">
 
                                                                 <div class="views-row row clearfix row-1">
 
-
+                                                                    @foreach($contents as $team)
                                                                     <div class="views-col col-1 col-lg-4 col-md-4 col-sm-4 col-xs-12  mx-auto">
 
                                                                         <!-- Start Display article for teaser page -->
 
-                                                                        <div data-history-node-id="59" role="article" about="/drupal/gito/node/59"
+                                                                        <div data-history-node-id="59" role="article"
                                                                              class="node node-detail node--type-team node--promoted node--view-mode-teaser clearfix">
                                                                             <div class="team-block">
                                                                                 <div class="team-image">
                                                                                     <div
                                                                                         class="field field--name-field-team-image field--type-image field--label-hidden field__item">
-                                                                                        <img src="{{asset('assets/images/team-1.png')}}" alt loading="lazy" typeof="foaf:Image">
+                                                                                        <img src="{{asset($team->image)}}" alt loading="lazy" typeof="foaf:Image">
 
                                                                                     </div>
 
-                                                                                    <div class="socials-team">
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-facebook"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-twitter"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-linkedin-square"></span>
-                                                                                        </a>
-
-                                                                                    </div>
+{{--                                                                                    <div class="socials-team">--}}
+{{--                                                                                        <a class="gva-social" href="#">--}}
+{{--                                                                                            <span class="fa fa-facebook"></span>--}}
+{{--                                                                                        </a>--}}
+{{--                                                                                        <a class="gva-social" href="#">--}}
+{{--                                                                                            <span class="fa fa-twitter"></span>--}}
+{{--                                                                                        </a>--}}
+{{--                                                                                        <a class="gva-social" href="#">--}}
+{{--                                                                                            <span class="fa fa-linkedin-square"></span>--}}
+{{--                                                                                        </a>--}}
+{{--                                                                                    </div>--}}
                                                                                 </div>
                                                                                 <div class="team-content">
                                                                                     <div class="team-name">
-                                                                                        <a href="team-modal.html" class="team-link">Proffesor David Dalison
-                                                                                            Mkwambisi</a>
+                                                                                        <a href="#" class="team-link">{{$team->name}}</a>
                                                                                     </div>
                                                                                     <div class="team-body">
                                                                                         <div
                                                                                             class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                            <p>Director of MIIRI</p>
+                                                                                            <p>{{$team->title}}</p>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -146,377 +143,13 @@
 
 
                                                                     </div>
-                                                                    <div class="views-col col-2 col-lg-4 col-md-4 col-sm-4 col-xs-12  mx-auto">
-
-                                                                        <!-- Start Display article for teaser page -->
-
-                                                                        <div data-history-node-id="58" role="article" about="/drupal/gito/node/58"
-                                                                             class="node node-detail node--type-team node--promoted node--view-mode-teaser clearfix">
-                                                                            <div class="team-block">
-                                                                                <div class="team-image">
-                                                                                    <div
-                                                                                        class="field field--name-field-team-image field--type-image field--label-hidden field__item">
-                                                                                        <img src="{{asset('assets/images/team-2.png')}}" alt loading="lazy" typeof="foaf:Image">
-
-                                                                                    </div>
-
-                                                                                    <div class="socials-team">
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-facebook"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-twitter"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-linkedin-square"></span>
-                                                                                        </a>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="team-content">
-                                                                                    <div class="team-name"><a id="modal-link" href="modal-2.css"
-                                                                                                              class="team-link">Dr. Tabitha Nindi</a></div>
-                                                                                    <div class="team-body">
-                                                                                        <div
-                                                                                            class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                            <p> Rsearch Fellow and Science Tech </p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <!-- End Display article for teaser page -->
-
-
-                                                                    </div>
-                                                                    <div class="views-col col-3 col-lg-4 col-md-4 col-sm-4 col-xs-12  mx-auto">
-
-                                                                        <!-- Start Display article for teaser page -->
-
-                                                                        <div data-history-node-id="64" role="article" about="/drupal/gito/node/64"
-                                                                             class="node node-detail node--type-team node--promoted node--view-mode-teaser clearfix">
-                                                                            <div class="team-block">
-                                                                                <div class="team-image">
-                                                                                    <div
-                                                                                        class="field field--name-field-team-image field--type-image field--label-hidden field__item">
-                                                                                        <img src="{{asset('assets/images/team-3.png')}}" alt loading="lazy" typeof="foaf:Image">
-
-                                                                                    </div>
-
-                                                                                    <div class="socials-team">
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-facebook"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-twitter"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-linkedin-square"></span>
-                                                                                        </a>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="team-content">
-                                                                                    <div class="team-name"><a href="">Dr. Edda Lungu</a></div>
-                                                                                    <div class="team-body">
-                                                                                        <div
-                                                                                            class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                            <p> Post Doc. Fellow - Food and Nutrition </p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <!-- End Display article for teaser page -->
-
-
-                                                                    </div>
-
+                                                                    @endforeach
                                                                 </div>
 
-
-
-                                                                <div class="views-row row clearfix row-2">
-
-
-                                                                    <div class="views-col col-1 col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
-                                                                        <!-- Start Display article for teaser page -->
-
-                                                                        <div data-history-node-id="63" role="article" about="/drupal/gito/node/63"
-                                                                             class="node node-detail node--type-team node--promoted node--view-mode-teaser clearfix">
-                                                                            <div class="team-block">
-                                                                                <div class="team-image">
-                                                                                    <div
-                                                                                        class="field field--name-field-team-image field--type-image field--label-hidden field__item">
-                                                                                        <img src="{{asset('assets/images/team-4.png')}}" alt loading="lazy" typeof="foaf:Image">
-
-                                                                                    </div>
-
-                                                                                    <div class="socials-team">
-
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-linkedin-square"></span>
-                                                                                        </a>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="team-content">
-                                                                                    <div class="team-name"><a href="/drupal/gito/node/63">Dr. Joseph Issa
-                                                                                        </a></div>
-                                                                                    <div class="team-body">
-                                                                                        <div
-                                                                                            class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                            <p>Rsearch Fellow and Science Tech</p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <!-- End Display article for teaser page -->
-
-
-                                                                    </div>
-                                                                    <div class="views-col col-2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
-                                                                        <!-- Start Display article for teaser page -->
-
-                                                                        <div data-history-node-id="62" role="article" about="/drupal/gito/node/62"
-                                                                             class="node node-detail node--type-team node--promoted node--view-mode-teaser clearfix">
-                                                                            <div class="team-block">
-                                                                                <div class="team-image">
-                                                                                    <div
-                                                                                        class="field field--name-field-team-image field--type-image field--label-hidden field__item">
-                                                                                        <img src="{{asset('assets/images/team-5.png')}}" alt loading="lazy" typeof="foaf:Image">
-
-                                                                                    </div>
-
-                                                                                    <div class="socials-team">
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-facebook"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-twitter"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-linkedin-square"></span>
-                                                                                        </a>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="team-content">
-                                                                                    <div class="team-name"><a href="/drupal/gito/node/62">Wongani Langa</a>
-                                                                                    </div>
-                                                                                    <div class="team-body">
-                                                                                        <div
-                                                                                            class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                            <p>Research Fellow - Technology and Innovations</p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <!-- End Display article for teaser page -->
-
-
-                                                                    </div>
-                                                                    <div class="views-col col-3 col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
-                                                                        <!-- Start Display article for teaser page -->
-
-                                                                        <div data-history-node-id="61" role="article" about="/drupal/gito/node/61"
-                                                                             class="node node-detail node--type-team node--promoted node--view-mode-teaser clearfix">
-                                                                            <div class="team-block">
-                                                                                <div class="team-image">
-                                                                                    <div
-                                                                                        class="field field--name-field-team-image field--type-image field--label-hidden field__item">
-                                                                                        <img src="{{asset('assets/images/team-6.png')}}" alt loading="lazy" typeof="foaf:Image">
-
-                                                                                    </div>
-
-                                                                                    <div class="socials-team">
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-facebook"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-twitter"></span>
-                                                                                        </a>
-                                                                                        <a class="gva-social" href="#">
-                                                                                            <span class="fa fa-linkedin-square"></span>
-                                                                                        </a>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="team-content">
-                                                                                    <div class="team-name"><a href="/drupal/gito/node/61">Zalerapi
-                                                                                            Mhango</a></div>
-                                                                                    <div class="team-body">
-                                                                                        <div
-                                                                                            class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                            <p>Research Fellow - Technology and Innovations</p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <!-- End Display article for teaser page -->
-
-
-                                                                    </div>
-
-                                                                </div>
 
 
                                                             </div>
                                                         </div>
-
-
-
-
-                                                        <div class="views-row row clearfix row-2">
-
-
-                                                            <div class="views-col col-1 col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
-                                                                <!-- Start Display article for teaser page -->
-
-                                                                <div data-history-node-id="63" role="article" about="/drupal/gito/node/63"
-                                                                     class="node node-detail node--type-team node--promoted node--view-mode-teaser clearfix">
-                                                                    <div class="team-block">
-                                                                        <div class="team-image">
-                                                                            <div
-                                                                                class="field field--name-field-team-image field--type-image field--label-hidden field__item">
-                                                                                <img src="{{asset('assets/images/team-7.jpg')}}" alt loading="lazy" typeof="foaf:Image">
-
-                                                                            </div>
-
-                                                                            <div class="socials-team">
-                                                                                <a class="gva-social" href="#">
-                                                                                    <span class="fa fa-facebook"></span>
-                                                                                </a>
-                                                                                <a class="gva-social" href="#">
-                                                                                    <span class="fa fa-twitter"></span>
-                                                                                </a>
-                                                                                <a class="gva-social" href="#">
-                                                                                    <span class="fa fa-linkedin-square"></span>
-                                                                                </a>
-
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="team-content">
-                                                                            <div class="team-name"><a href="/drupal/gito/node/63">Emmanuel Likoya</a>
-                                                                            </div>
-                                                                            <div class="team-body">
-                                                                                <div
-                                                                                    class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                    <p> Post Doc. Fellow - Food and Nutrition
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <!-- End Display article for teaser page -->
-
-
-                                                            </div>
-                                                            <div class="views-col col-2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
-                                                                <!-- Start Display article for teaser page -->
-
-                                                                <div data-history-node-id="62" role="article" about="/drupal/gito/node/62"
-                                                                     class="node node-detail node--type-team node--promoted node--view-mode-teaser clearfix">
-                                                                    <div class="team-block">
-                                                                        <div class="team-image">
-                                                                            <div
-                                                                                class="field field--name-field-team-image field--type-image field--label-hidden field__item">
-                                                                                <img src="{{asset('assets/images/team-8.png')}}" alt loading="lazy" typeof="foaf:Image">
-
-                                                                            </div>
-
-                                                                            <div class="socials-team">
-                                                                                <a class="gva-social" href="#">
-                                                                                    <span class="fa fa-facebook"></span>
-                                                                                </a>
-                                                                                <a class="gva-social" href="#">
-                                                                                    <span class="fa fa-twitter"></span>
-                                                                                </a>
-                                                                                <a class="gva-social" href="#">
-                                                                                    <span class="fa fa-linkedin-square"></span>
-                                                                                </a>
-
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="team-content">
-                                                                            <div class="team-name"><a href="/drupal/gito/node/62">Patrick Chimsewu</a>
-                                                                            </div>
-                                                                            <div class="team-body">
-                                                                                <div
-                                                                                    class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                    <p>Projects Officer</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <!-- End Display article for teaser page -->
-
-
-                                                            </div>
-                                                            <div class="views-col col-3 col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
-                                                                <!-- Start Display article for teaser page -->
-
-                                                                <div data-history-node-id="61" role="article" about="/drupal/gito/node/61"
-                                                                     class="node node-detail node--type-team node--promoted node--view-mode-teaser clearfix">
-                                                                    <div class="team-block">
-                                                                        <div class="team-image">
-                                                                            <div
-                                                                                class="field field--name-field-team-image field--type-image field--label-hidden field__item">
-                                                                                <img src="{{asset('assets/images/team-9.jpg')}}" alt loading="lazy" typeof="foaf:Image">
-
-                                                                            </div>
-
-                                                                            <div class="socials-team">
-                                                                                <a class="gva-social" href="#">
-                                                                                    <span class="fa fa-facebook"></span>
-                                                                                </a>
-                                                                                <a class="gva-social" href="#">
-                                                                                    <span class="fa fa-twitter"></span>
-                                                                                </a>
-                                                                                <a class="gva-social" href="#">
-                                                                                    <span class="fa fa-linkedin-square"></span>
-                                                                                </a>
-
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="team-content">
-                                                                            <div class="team-name"><a href="/drupal/gito/node/61">Esther Chole</a></div>
-                                                                            <div class="team-body">
-                                                                                <div
-                                                                                    class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                                                    <p>Secretary</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <!-- End Display article for teaser page -->
-
-
-                                                            </div>
-
-                                                        </div>
-
-
                                                     </div>
                                                 </div>
                                             </div>

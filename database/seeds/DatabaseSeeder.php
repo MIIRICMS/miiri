@@ -6,6 +6,7 @@ use Database\Seeders\NewsTableSeeder;
 use Database\Seeders\PageTableSeeder;
 use Database\Seeders\ProgramTableSeeder;
 use Database\Seeders\ProjectTableSeeder;
+use Database\Seeders\PublicationsTableSeeder;
 use Database\Seeders\ResearchTableSeeder;
 use Database\Seeders\UserTableSeeder;
 use Illuminate\Database\Seeder;
@@ -27,5 +28,6 @@ class DatabaseSeeder extends Seeder
          $this->call(NewsTableSeeder::class);
          $this->call(AlbumTableSeeder::class);
          $this->call(ResearchTableSeeder::class);
+         $this->call(PublicationsTableSeeder::class);
     }
 }

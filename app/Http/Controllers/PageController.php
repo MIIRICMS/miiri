@@ -7,6 +7,7 @@ use App\News;
 use App\Page;
 use App\Program;
 use App\Project;
+use App\Publication;
 use App\Research;
 use Aws\StorageGateway\Exception\StorageGatewayException;
 use Illuminate\Http\Request;
@@ -57,15 +58,13 @@ class PageController extends Controller
     public function team()
     {
         $page = Page::where('name','team')->first();
-//        $contents = json_decode($page->contents);
-        $contents = [];
+        $contents = json_decode($page->contents);
         return view('pages.guest.team', compact('contents','page'));
     }
     public function partners()
     {
         $page = Page::where('name','partners')->first();
-//        $contents = json_decode($page->contents);
-        $contents = [];
+        $contents = json_decode($page->contents);
         return view('pages.guest.partners', compact('contents','page'));
     }
     public function publications()
@@ -73,7 +72,8 @@ class PageController extends Controller
         $page = Page::where('name','publications')->first();
 //        $contents = json_decode($page->contents);
         $contents = [];
-        return view('pages.guest.publications', compact('contents','page'));
+        $publications = Publication::orderBy("date","desc")->get();
+        return view('pages.guest.publications', compact('contents','page','publications'));
     }
     public function news()
     {
@@ -152,14 +152,53 @@ class PageController extends Controller
         $page =Page::where('name', $request->page)->first();
         if(is_object($page)){
 
-            $page->update([
-               "contents"=>json_encode([
-                   'title1'        => $request->title1,
-                   'description1'  => $request->description1,
-                   'title2'        => $request->title2,
-                   'description2'  => $request->description2,
-               ])
-            ]);
+            switch ($request->page) {
+                case "about-us":
+                    $page->update([
+                        "contents" => json_encode([
+                            'title1'        => $request->title1,
+                            'description1'  => $request->description1,
+                            'title2'        => $request->title2,
+                            'description2'  => $request->description2,
+                            'title3'        => $request->title3,
+                            'description3'  => $request->description3,
+                            'values'        => [
+                                'vision'            => $request->vision,
+                                'mission'           => $request->mission,
+                                'key_principles'    => $request->key_principles,
+                            ],
+                            'people_and_society' => [
+                                [
+                                    "title" => $request->people_and_society_title_1,
+                                    "body" => $request->people_and_society_body_1,
+                                ],
+                                [
+                                    "title" => $request->people_and_society_title_2,
+                                    "body" => $request->people_and_society_body_2,
+                                ],
+                                [
+                                    "title" => $request->people_and_society_title_3,
+                                    "body" => $request->people_and_society_body_3,
+                                ],
+                            ],
+                        ])
+                    ]);
+                    break;
+                case "team":
+                    break;
+                case "partners":
+                    break;
+                default:
+                    $page->update(["contents" => json_encode([
+                        'title1' => $request->title1,
+                        'description1' => $request->description1,
+                        'title2' => $request->title2,
+                        'description2' => $request->description2,
+                        'title3' => $request->title3,
+                        'description3' => $request->description3,
+                        ])
+                    ]);
+            }
 
             if(isset($request->image_1)){
                 if(file_exists($page->image_1)){
@@ -247,6 +286,36 @@ class PageController extends Controller
         if(is_object($page)) {
             $contents = json_decode($page->contents);
             return view('pages.admin.pages.about-us', compact('contents','page'));
+        }else{
+            return Redirect::back();
+        }
+    }
+    public function editResearchAndInnovations()
+    {
+        $page = Page::where('name','research-and-innovations')->first();
+        if(is_object($page)) {
+            $contents = json_decode($page->contents);
+            return view('pages.admin.pages.research-and-innovations', compact('contents','page'));
+        }else{
+            return Redirect::back();
+        }
+    }
+    public function editTeam()
+    {
+        $page = Page::where('name','team')->first();
+        if(is_object($page)) {
+            $contents = json_decode($page->contents);
+            return view('pages.admin.pages.team', compact('contents','page'));
+        }else{
+            return Redirect::back();
+        }
+    }
+    public function editPartners()
+    {
+        $page = Page::where('name','partners')->first();
+        if(is_object($page)) {
+            $contents = json_decode($page->contents);
+            return view('pages.admin.pages.partners', compact('contents','page'));
         }else{
             return Redirect::back();
         }

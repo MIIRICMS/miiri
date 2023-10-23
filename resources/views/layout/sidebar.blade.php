@@ -32,21 +32,15 @@
                     <li class="nav-item">
                         <a href="{{ route('pages.about-us') }}" class="nav-link {{ active_class(['pages/about-us']) }}">About Us</a>
                     </li>
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="{{ url('/general/faq') }}" class="nav-link {{ active_class(['general/faq']) }}">Faq</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="{{ url('/general/invoice') }}" class="nav-link {{ active_class(['general/invoice']) }}">Invoice</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="{{ url('/general/profile') }}" class="nav-link {{ active_class(['general/profile']) }}">Profile</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="{{ url('/general/pricing') }}" class="nav-link {{ active_class(['general/pricing']) }}">Pricing</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="{{ url('/general/timeline') }}" class="nav-link {{ active_class(['general/timeline']) }}">Timeline</a>--}}
-{{--                    </li>--}}
+                    <li class="nav-item">
+                        <a href="{{ route('pages.research-and-innovations') }}" class="nav-link {{ active_class(['pages/about-us']) }}">Research and Innovations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('pages.team') }}" class="nav-link {{ active_class(['pages/team']) }}">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('pages.partners') }}" class="nav-link {{ active_class(['pages/partners']) }}">Partners</a>
+                    </li>
                 </ul>
             </div>
         </li>

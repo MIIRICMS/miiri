@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
+            $table->double("date");
+            $table->text("title");
+            $table->text("body");
+            $table->string("file");
             $table->timestamps();
         });
     }

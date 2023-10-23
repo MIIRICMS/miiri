@@ -10,8 +10,9 @@ class Publication extends Model
     use HasFactory;
 
     protected $fillable=[
-        "image",
+        "date",
         "title",
         "body",
+        "file",
     ];
 }
