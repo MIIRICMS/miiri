@@ -57,7 +57,7 @@ class ProgramController extends Controller
             'body'          => Purifier::clean($request->body),
         ]);
 
-        return Redirect::route('programs.show',['id'=>$program->slug])->with('success','program created!');
+        return Redirect::route('programs.show',['slug'=>$program->slug])->with('success','program created!');
     }
 
     public function show($slug)
@@ -121,7 +121,7 @@ class ProgramController extends Controller
                 }
             }
 
-            return Redirect::route('programs.show',$slug)->with('success','program updated!');
+            return Redirect::route('programs.show',['slug'=>$program->slug])->with('success','program updated!');
         }
     }
 

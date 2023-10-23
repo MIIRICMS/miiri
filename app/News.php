@@ -20,6 +20,7 @@ class News extends Model
         "slug",
         "body",
         "date",
+        "category_id",
         "user_id",
     ];
 }

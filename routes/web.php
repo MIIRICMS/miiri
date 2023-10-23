@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,9 +49,27 @@ Route::group(['middleware'=>'auth', 'prefix' => 'admin'],function (){
         Route::get('/', [ProgramController::class, "index"])->name('programs.index');
         Route::get('/create', [ProgramController::class, "create"])->name('programs.create');
         Route::post('/store', [ProgramController::class, "store"])->name('programs.store');
+        Route::get('/edit/{slug}', [ProgramController::class, "edit"])->name('programs.edit');
+        Route::post('/update/{slug}', [ProgramController::class, "update"])->name('programs.update');
         Route::get('/view/{slug}', [ProgramController::class, "show"])->name('programs.show');
+        Route::get('/delete/{slug}', [ProgramController::class, "trash"])->name('programs.trash');
+    });
+
+    Route::group(["prefix"=>"projects"], function (){
+        Route::get('/', [ProjectController::class, "index"])->name('projects.index');
+        Route::get('/create', [ProjectController::class, "create"])->name('projects.create');
+        Route::post('/store', [ProjectController::class, "store"])->name('projects.store');
+        Route::get('/edit/{slug}', [ProjectController::class, "edit"])->name('projects.edit');
+        Route::post('/update/{slug}', [ProjectController::class, "update"])->name('projects.update');
+        Route::get('/view/{slug}', [ProjectController::class, "show"])->name('projects.show');
+        Route::get('/delete/{slug}', [ProjectController::class, "trash"])->name('projects.trash');
     });
 });
+
+//Route::group(['prefix' => 'icons'], function(){
+//    Route::get('feather-icons', function () { return view('pages.icons.feather-icons'); });
+//    Route::get('mdi-icons', function () { return view('pages.icons.mdi-icons'); });
+//});
 
 /*Route::group(['prefix' => 'email'], function(){
     Route::get('inbox', function () { return view('pages.email.inbox'); });
@@ -116,10 +135,7 @@ Route::group(['prefix' => 'tables'], function(){
     Route::get('data-table', function () { return view('pages.tables.data-table'); });
 });
 
-Route::group(['prefix' => 'icons'], function(){
-    Route::get('feather-icons', function () { return view('pages.icons.feather-icons'); });
-    Route::get('mdi-icons', function () { return view('pages.icons.mdi-icons'); });
-});
+
 
 Route::group(['prefix' => 'general'], function(){
     Route::get('blank-page', function () { return view('pages.general.blank-page'); });

@@ -58,6 +58,12 @@
                 <span class="link-title">Programs</span>
             </a>
         </li>
+        <li class="nav-item {{ active_class(['/admin/projects']) }}">
+            <a href="{{ route('projects.index') }}" class="nav-link">
+                <i class="link-icon" data-feather="box"></i>
+                <span class="link-title">Projects</span>
+            </a>
+        </li>
     </ul>
   </div>
 </nav>
