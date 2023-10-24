@@ -34,6 +34,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/update.css') }}" rel="stylesheet" />
+  <link href="{{ asset('css/made.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/css_cbrmMx4eceAxd8Mkv9FI_RW9uqeLnuTVjgE8vfHMDxw.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/css_sn8H3j4q31o9yOhm2p9NtGtJLmaCzSWAtkW5420gIA4.css') }}" rel="stylesheet" />
   <link href="{{ asset('fonts/Source+Sans+Pro.css') }}" rel="stylesheet" />
@@ -127,7 +128,7 @@
 {{--<body data-base-url="{{url('/')}}">--}}
 <body class="hidden-title footer-black layout-no-sidebars wide footer-black js-preloader frontpage node--type-page">
 
-  <script src="{{ asset('assets/js/spinner.js') }}"></script>
+{{--  <script src="{{ asset('assets/js/spinner.js') }}"></script>--}}
 
   <a href="#main-content" class="visually-hidden focusable">
       Skip to main content
@@ -135,11 +136,12 @@
 
   <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
 
+
       <div class="body-page gva-body-page">
           <div id="jpreContent">
               <div id="jprecontent-inner">
                   <div class="preloader-wrapper hidden active">
-                      <img src="images/preloader-7.gif" alt>
+                      <img src="assets/images/preloader-7.gif" alt>
                   </div>
               </div>
           </div>

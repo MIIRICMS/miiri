@@ -17,7 +17,7 @@ class PageTableSeeder extends Seeder
     {
         Page::create([
             'name'      => 'home',
-            'image_1'   => 'assets/images/homebg.png',
+            'image_1'   => 'assets/images/participationbg.jpg',
             'image_2'   => 'assets/images/homeabout.png',
             'image_3'   => 'assets/images/hsec3bg.jpg',
 
