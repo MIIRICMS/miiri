@@ -58,7 +58,7 @@ class ResearchController extends Controller
             'first_name'    => $request->first_name,
             'last_name'     => $request->last_name,
             'position'      => $request->position,
-            'type'          => $request->type == "research",
+            'type'          => $request->type == "research" ? 0 : 1,
             'title'         => $request->title,
             "slug"          => $slug,
             'date'          => $date->getTimestamp(),

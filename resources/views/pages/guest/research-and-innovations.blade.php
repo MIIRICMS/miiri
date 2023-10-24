@@ -17,7 +17,7 @@
 
                         <div class="content-main">
                             <div>
-                                <div id="block-gavias-gito-mainpagecontent" class="block block-system block-system-main-block no-title">
+                                <div >
 
 
                                     <div class="content block-content">
@@ -47,7 +47,8 @@
                                                                                     <div class="gsc-column col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                                         <div class="column-inner  bg-size-cover ">
                                                                                             <div class="column-content-inner">
-                                                                                                <div class="widget gsc-block-drupal title-align-left  hidden-title-on remove-margin-on text-dark"><div id="block-gavias-gito-gaviassliderlayerslider1" class="block block-gavias-sliderlayer block-gavias-sliderlayer-blockgavias-sliderlayer-block____1 no-title">
+                                                                                                <div class="widget gsc-block-drupal title-align-left  hidden-title-on remove-margin-on text-dark">
+                                                                                                    <div >
 
 
                                                                                                         <div class="content block-content">

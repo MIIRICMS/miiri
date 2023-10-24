@@ -97,6 +97,16 @@ Route::group(['middleware'=>'auth', 'prefix' => 'admin'],function (){
         Route::get('/view/{slug}', [ResearchController::class, "show"])->name('research-and-innovations.show');
         Route::get('/delete/{slug}', [ResearchController::class, "trash"])->name('research-and-innovations.trash');
     });
+
+    Route::group(["prefix"=>"users"], function (){
+//        Route::get('/', [ResearchController::class, "index"])->name('research-and-innovations.index');
+        Route::get('/create', [UserController::class, "create"])->name('users.create');
+        Route::post('/store', [UserController::class, "store"])->name('users.store');
+//        Route::get('/edit/{slug}', [ResearchController::class, "edit"])->name('research-and-innovations.edit');
+//        Route::post('/update/{slug}', [ResearchController::class, "update"])->name('research-and-innovations.update');
+//        Route::get('/view/{slug}', [ResearchController::class, "show"])->name('research-and-innovations.show');
+//        Route::get('/delete/{slug}', [ResearchController::class, "trash"])->name('research-and-innovations.trash');
+    });
 });
 
 //Route::group(['prefix' => 'icons'], function(){

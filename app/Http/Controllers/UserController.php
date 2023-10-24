@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
@@ -40,5 +41,28 @@ class UserController extends Controller
     {
         Auth::logout();
         return Redirect::route("home");
+    }
+
+    public function create()
+    {
+        return view('pages.admin.users.create');
+    }
+
+    public function store(Request $request)
+    {
+
+        Validator::make($request->all(),[
+            "name"          =>  "required",
+            "email"         =>  "required",
+            "password"      =>  "required | confirmed",
+        ])->validate();
+
+        $user=User::create([
+            'name'    => $request->name,
+            'email'     => $request->email,
+            'password'      => bcrypt($request->password),
+        ]);
+
+        return Redirect::route('dashboard',)->with('success','User created!');
     }
 }

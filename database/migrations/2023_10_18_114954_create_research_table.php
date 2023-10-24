@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string("title");
             $table->text("description");
             $table->double("date");
-            $table->integer("type");
+            $table->boolean("type");
             $table->timestamps();
         });
     }

@@ -54,8 +54,8 @@
                                                                                             <div class="column-content-inner">
                                                                                                 <div
                                                                                                     class="widget gsc-block-drupal title-align-left  hidden-title-on remove-margin-on text-dark">
-                                                                                                    <div id="block-gavias-gito-gaviassliderlayerslider1"
-                                                                                                         class="block block-gavias-sliderlayer block-gavias-sliderlayer-blockgavias-sliderlayer-block____1 no-title">
+                                                                                                    <div id=""
+                                                                                                         class="">
 
 
                                                                                                         <div class="content block-content">
