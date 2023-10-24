@@ -13,6 +13,7 @@ class Publication extends Model
         "date",
         "title",
         "body",
+        "slug",
         "file",
     ];
 }

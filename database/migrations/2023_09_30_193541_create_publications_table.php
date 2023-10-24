@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->double("date");
             $table->text("title");
+            $table->text("slug");
             $table->text("body");
             $table->string("file");
             $table->timestamps();

@@ -11,9 +11,12 @@
 |
 */
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +66,36 @@ Route::group(['middleware'=>'auth', 'prefix' => 'admin'],function (){
         Route::post('/update/{slug}', [ProjectController::class, "update"])->name('projects.update');
         Route::get('/view/{slug}', [ProjectController::class, "show"])->name('projects.show');
         Route::get('/delete/{slug}', [ProjectController::class, "trash"])->name('projects.trash');
+    });
+
+    Route::group(["prefix"=>"news"], function (){
+        Route::get('/', [NewsController::class, "index"])->name('news.index');
+        Route::get('/create', [NewsController::class, "create"])->name('news.create');
+        Route::post('/store', [NewsController::class, "store"])->name('news.store');
+        Route::get('/edit/{slug}', [NewsController::class, "edit"])->name('news.edit');
+        Route::post('/update/{slug}', [NewsController::class, "update"])->name('news.update');
+        Route::get('/view/{slug}', [NewsController::class, "show"])->name('news.show');
+        Route::get('/delete/{slug}', [NewsController::class, "trash"])->name('news.trash');
+    });
+
+    Route::group(["prefix"=>"publications"], function (){
+        Route::get('/', [PublicationController::class, "index"])->name('publications.index');
+        Route::get('/create', [PublicationController::class, "create"])->name('publications.create');
+        Route::post('/store', [PublicationController::class, "store"])->name('publications.store');
+        Route::get('/edit/{slug}', [PublicationController::class, "edit"])->name('publications.edit');
+        Route::post('/update/{slug}', [PublicationController::class, "update"])->name('publications.update');
+        Route::get('/view/{slug}', [PublicationController::class, "show"])->name('publications.show');
+        Route::get('/delete/{slug}', [PublicationController::class, "trash"])->name('publications.trash');
+    });
+
+    Route::group(["prefix"=>"research-and-innovations"], function (){
+        Route::get('/', [ResearchController::class, "index"])->name('research-and-innovations.index');
+        Route::get('/create', [ResearchController::class, "create"])->name('research-and-innovations.create');
+        Route::post('/store', [ResearchController::class, "store"])->name('research-and-innovations.store');
+        Route::get('/edit/{slug}', [ResearchController::class, "edit"])->name('research-and-innovations.edit');
+        Route::post('/update/{slug}', [ResearchController::class, "update"])->name('research-and-innovations.update');
+        Route::get('/view/{slug}', [ResearchController::class, "show"])->name('research-and-innovations.show');
+        Route::get('/delete/{slug}', [ResearchController::class, "trash"])->name('research-and-innovations.trash');
     });
 });
 

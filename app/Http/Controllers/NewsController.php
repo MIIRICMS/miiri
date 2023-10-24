@@ -17,15 +17,15 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $newss=News::latest()->paginate((new AppController())->paginate);
+        $news=News::latest()->paginate((new AppController())->paginate);
 
-        return view('pages.admin.programs.index',compact("programs"));
+        return view('pages.admin.news.index',compact("news"));
     }
 
 
     public function create()
     {
-        return view('pages.admin.programs.create');
+        return view('pages.admin.news.create');
     }
 
     public function store(Request $request)
@@ -34,6 +34,7 @@ class NewsController extends Controller
         Validator::make($request->all(),[
             "image"     =>  "required",
             "title"     =>  "required",
+            "date"      =>  "required",
             "body"      =>  "required",
         ])->validate();
 
@@ -45,7 +46,7 @@ class NewsController extends Controller
         $filename = null;
 
         try {
-            $filename=$request->file("image")->store('/uploads','public_uploads');
+            $filename=$request->file("image")->store('/uploads/news','public_uploads');
         }catch (FileException $exception){
             //catch file exception
         }
@@ -60,7 +61,7 @@ class NewsController extends Controller
             'body'          => Purifier::clean($request->body),
         ]);
 
-        return Redirect::route('projects.show',['slug'=>$news->slug])->with('success','News Article created!');
+        return Redirect::route('news.show',['slug'=>$news->slug])->with('success','News Article created!');
     }
 
     public function show($slug)
@@ -69,7 +70,7 @@ class NewsController extends Controller
         if (!is_object($news))
             return Redirect::back()->with('error','News Article not found');
         else {
-            return view('pages.admin.programs.show',compact('program'));
+            return view('pages.admin.news.show',compact('news'));
         }
     }
 
@@ -79,7 +80,7 @@ class NewsController extends Controller
         if (!is_object($news))
             return Redirect::back()->with('error','News Article not found');
         else {
-            return view('pages.admin.programs.edit',compact('program'));
+            return view('pages.admin.news.edit',compact('news'));
         }
     }
 
@@ -95,16 +96,16 @@ class NewsController extends Controller
                 "title"     =>  "required",
                 "body"      =>  "required",
             ])->validate();
-//
-//            $date_raw=explode('-',$request->date);
-//            $date=Carbon::create($date_raw[0],$date_raw[1],$date_raw[2],0,0,0);
+
+            $date_raw=explode('-',$request->date);
+            $date=Carbon::create($date_raw[0],$date_raw[1],$date_raw[2],0,0,0);
 
             $slug = Str::slug($request->title).date("-Y-m-d");
 
             $news->update([
                 'title'         => $request->title,
 //                "slug"          => $slug,
-//            'date'          => $date->getTimestamp(),
+                'date'          => $date->getTimestamp(),
                 'body'          => Purifier::clean($request->body),
             ]);
 
@@ -115,16 +116,16 @@ class NewsController extends Controller
 
                 $filename=$slug.".".$request->image->extension();
                 try {
-                    $request->image->move(public_path('images/programs'),$filename);
+                    $request->image->move(public_path('uploads/news'),$filename);
                     $news->update([
-                        "image" => "images/programs/$filename"
+                        "image" => "uploads/news/$filename"
                     ]);
                 }catch (FileException $exception){
                     //catch file exception
                 }
             }
 
-            return Redirect::route('programs.show',['slug'=>$news->slug])->with('success','News Article updated!');
+            return Redirect::route('news.show',['slug'=>$news->slug])->with('success','News Article updated!');
         }
     }
 
@@ -135,7 +136,7 @@ class NewsController extends Controller
             return Redirect::back()->with('error','News Article not found');
         else {
             $news->delete();
-            return Redirect::route('programs.index')->with('success','News Article deleted!');
+            return Redirect::route('news.index')->with('success','News Article deleted!');
         }
     }
 }

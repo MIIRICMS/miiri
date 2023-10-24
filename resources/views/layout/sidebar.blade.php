@@ -64,6 +64,24 @@
                 <span class="link-title">Projects</span>
             </a>
         </li>
+        <li class="nav-item {{ active_class(['/admin/news']) }}">
+            <a href="{{ route('news.index') }}" class="nav-link">
+                <i class="link-icon" data-feather="box"></i>
+                <span class="link-title">News</span>
+            </a>
+        </li>
+        <li class="nav-item {{ active_class(['/admin/publications']) }}">
+            <a href="{{ route('publications.index') }}" class="nav-link">
+                <i class="link-icon" data-feather="box"></i>
+                <span class="link-title">Publications</span>
+            </a>
+        </li>
+        <li class="nav-item {{ active_class(['/admin/research-and-innovations']) }}">
+            <a href="{{ route('research-and-innovations.index') }}" class="nav-link">
+                <i class="link-icon" data-feather="box"></i>
+                <span class="link-title">Research and Innovations</span>
+            </a>
+        </li>
     </ul>
   </div>
 </nav>
