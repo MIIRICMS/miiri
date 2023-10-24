@@ -39,7 +39,7 @@ class ResearchTableSeeder extends Seeder
             "type"          => 0,
         ]);
         Research::create([
-            "image"         => "assets/images/bg-10.png",
+            "image"         => "assets/images/bg-10-cpy.png",
             "first_name"    => "Mclean ",
             "last_name"     => "Kumwenda",
             "position"      => "BSc Engineering in Biomedical Engineering, MUST",
@@ -78,7 +78,7 @@ technologies.”</p>",
             "type"          => 1,
         ]);
         Research::create([
-            "image"         => "assets/images/bg-10.png",
+            "image"         => "assets/images/bg-10-cpy.png",
             "first_name"    => "Peter ",
             "last_name"     => "Ngwira",
             "position"      => "BSc Engineering (Hons) - Chemical Engineering",
@@ -109,7 +109,7 @@ technologies.”</p>",
             "type"          => 1,
         ]);
         Research::create([
-            "image"         => "assets/images/bg-10.png",
+            "image"         => "assets/images/bg-10-cpy.png",
             "first_name"    => "Gracian ",
             "last_name"     => "Masanjala",
             "position"      => "BSc Engineering (Hons) - Chemical Engineering",

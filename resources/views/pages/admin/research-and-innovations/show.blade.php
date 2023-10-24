@@ -19,10 +19,10 @@
     </div>
     <div class="d-flex align-items-center flex-wrap text-nowrap">
 
-{{--        <a href="{{route("research-and-innovations.edit",['slug'=>$research->slug])}}" class="btn btn-secondary btn-icon-text mb-2 mb-md-0">--}}
-{{--            <i class="btn-icon-prepend" data-feather="download"></i>--}}
-{{--            Edit--}}
-{{--        </a>--}}
+        <a href="{{route("research-and-innovations.edit",['slug'=>$research->slug])}}" class="btn btn-secondary btn-icon-text mb-2 mb-md-0">
+            <i class="btn-icon-prepend" data-feather="download"></i>
+            Edit
+        </a>
         <a href="{{route("research-and-innovations.trash",['slug'=>$research->slug])}}" class="btn btn-danger btn-icon-text mb-2 mb-md-0">
             <i class="btn-icon-prepend" data-feather="download"></i>
             Delete

@@ -97,8 +97,14 @@ class ResearchController extends Controller
             //update
 
             Validator::make($request->all(),[
-                "title"     =>  "required",
-                "body"      =>  "required",
+
+                "title"         =>  "required",
+                "description"   =>  "required",
+                "date"          =>  "required",
+                "first_name"    =>  "required",
+                "last_name"     =>  "required",
+                "position"     =>  "required",
+                "type"          =>  "required",
             ])->validate();
 
             $date_raw=explode('-',$request->date);
@@ -107,20 +113,24 @@ class ResearchController extends Controller
             $slug = uniqid().date("-Y-m-d");
 
             $research->update([
+                'first_name'    => $request->first_name,
+                'last_name'     => $request->last_name,
+                'position'      => $request->position,
+                'type'          => $request->type == "research" ? 0 : 1,
                 'title'         => $request->title,
 //                "slug"          => $slug,
                 'date'          => $date->getTimestamp(),
-                'body'          => Purifier::clean($request->body),
+                'description'   => Purifier::clean($request->description),
             ]);
 
-            if(isset($request->file)){
-                if(file_exists($research->file)){
-                    Storage::disk("public_uploads")->delete($research->file);
+            if(isset($request->image)){
+                if(file_exists($research->image)){
+                    Storage::disk("public_uploads")->delete($research->image);
                 }
 
-                $filename=$slug.".".$request->file->extension();
+                $filename=$slug.".".$request->image->extension();
                 try {
-                    $request->file->move(public_path('uploads/researches'),$filename);
+                    $request->image->move(public_path('uploads/researches'),$filename);
                     $research->update([
                         "image" => "uploads/researches/$filename"
                     ]);
